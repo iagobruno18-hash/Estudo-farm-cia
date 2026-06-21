@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0E4D46">
+<title>Plano de Estudos — Farmacêutico — Concurso Campina Grande/PB</title>
+<style>
+:root{
+  --bg:#F4F6F1;
+  --paper:#FFFFFF;
+  --ink:#1B2421;
+  --ink-soft:#54635C;
+  --ink-faint:#9AA59E;
+  --line:#DEE4D9;
+  --line-soft:#EBEFE7;
+  --primary:#0E4D46;
+  --primary-700:#0A3A35;
+  --primary-100:#E3EFEC;
+  --accent:#C97A2B;
+  --accent-100:#FBEFE0;
+  --easy:#3F8156; --easy-bg:#E5F1E7; --easy-line:#BFDBC8;
+  --medium:#B6791E; --medium-bg:#FBEEDB; --medium-line:#EAD0A0;
+  --hard:#A23E33; --hard-bg:#F7E3DF; --hard-line:#E8BBB2;
+  --review:#5B4E96; --review-bg:#ECE8F7; --review-line:#CDC4E8;
+  --sim:#1D3557; --sim-bg:#E2E8F0; --sim-line:#B9C6D8;
+  --exam:#8C1B23; --exam-bg:#F6E0E1; --exam-line:#E3B3B6;
+  --rest:#8C9890; --rest-bg:#EEF1ED;
+  --radius:12px;
+  --radius-sm:8px;
+  --shadow-sm:0 1px 2px rgba(20,30,25,.06);
+  --shadow:0 2px 4px rgba(20,30,25,.06), 0 8px 24px rgba(20,30,25,.08);
+  --font-display:"Iowan Old Style","Palatino Linotype","Book Antiqua",Palatino,"Noto Serif",Georgia,serif;
+  --font-body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --font-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  -webkit-font-smoothing:antialiased;
+  line-height:1.45;
+  padding-bottom:48px;
+}
+a{color:var(--primary);}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px;}
+button{font-family:inherit;}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);}
+
+/* ---------- Masthead ---------- */
+.masthead{
+  background:linear-gradient(180deg,var(--primary-700),var(--primary));
+  color:#F2F6F4;
+  padding:22px 0 26px;
+  border-bottom:4px solid var(--accent);
+}
+.masthead-inner{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;flex-wrap:wrap;}
+.masthead-id{display:flex;gap:14px;align-items:flex-start;}
+.seal{
+  width:50px;height:50px;border-radius:50%;
+  border:2px solid rgba(242,246,244,.55);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-display);font-weight:700;font-size:15px;letter-spacing:.5px;
+  flex:none;margin-top:2px;background:rgba(255,255,255,.04);
+}
+.masthead h1{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:clamp(20px,3.4vw,28px);
+  margin:0 0 4px;
+  letter-spacing:.2px;
+}
+.masthead .sub{
+  font-size:13px;color:rgba(242,246,244,.82);margin:0;
+}
+.masthead .meta-line{
+  font-size:11.5px;color:rgba(242,246,244,.68);margin:6px 0 0;
+  letter-spacing:.3px;
+}
+.masthead-actions{display:flex;align-items:center;gap:10px;}
+.stamp{
+  border:2px solid rgba(242,246,244,.85);
+  border-radius:50%;
+  width:96px;height:96px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  transform:rotate(-6deg);
+  text-align:center;
+  flex:none;
+  position:relative;
+}
+.stamp::before{
+  content:"";position:absolute;inset:6px;border:1px dashed rgba(242,246,244,.55);border-radius:50%;
+}
+.stamp .stamp-num{font-family:var(--font-display);font-size:26px;font-weight:700;line-height:1;}
+.stamp .stamp-label{font-size:8.5px;letter-spacing:1px;text-transform:uppercase;margin-top:2px;max-width:70px;}
+.icon-btn{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(242,246,244,.35);
+  color:#F2F6F4;
+  width:38px;height:38px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;font-size:16px;flex:none;
+}
+.icon-btn:hover{background:rgba(255,255,255,.18);}
+
+/* ---------- Progress panel ---------- */
+.progress-panel{margin-top:-14px;}
+.card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:18px 20px;
+}
+.progress-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;}
+.progress-top .big{font-family:var(--font-display);font-size:22px;color:var(--primary-700);}
+.progress-top .stat-small{font-size:12.5px;color:var(--ink-soft);}
+.bar-track{
+  height:14px;border-radius:999px;background:var(--line-soft);
+  margin-top:10px;overflow:hidden;border:1px solid var(--line);
+}
+.bar-fill{
+  height:100%;border-radius:999px;
+  background:linear-gradient(90deg,var(--primary),#1C7268);
+  transition:width .4s ease;
+}
+.area-bars{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:16px;}
+.area-bar-item .label-row{display:flex;justify-content:space-between;font-size:11.5px;color:var(--ink-soft);margin-bottom:4px;}
+.area-bar-track{height:7px;border-radius:999px;background:var(--line-soft);overflow:hidden;}
+.area-bar-fill{height:100%;background:var(--primary);border-radius:999px;}
+
+/* ---------- info toggle ---------- */
+.info-toggle{
+  margin-top:14px;border-top:1px solid var(--line-soft);padding-top:12px;
+}
+.info-toggle summary{cursor:pointer;font-size:13px;color:var(--primary-700);font-weight:600;list-style:none;}
+.info-toggle summary::-webkit-details-marker{display:none;}
+.info-toggle summary::before{content:"▸ ";}
+.info-toggle[open] summary::before{content:"▾ ";}
+.info-body{font-size:12.5px;color:var(--ink-soft);margin-top:10px;}
+.info-body table{border-collapse:collapse;width:100%;margin:8px 0;font-size:12px;}
+.info-body th,.info-body td{border:1px solid var(--line);padding:5px 8px;text-align:left;}
+.info-body th{background:var(--primary-100);color:var(--primary-700);}
+
+/* ---------- Month tabs ---------- */
+.month-tabs{display:flex;gap:8px;margin:22px 0 12px;flex-wrap:wrap;}
+.month-tab{
+  border:1px solid var(--line);background:var(--paper);color:var(--ink-soft);
+  padding:7px 16px;border-radius:999px;font-size:13px;cursor:pointer;font-weight:600;
+}
+.month-tab.active{background:var(--primary);color:#fff;border-color:var(--primary);}
+.month-tab .tab-count{font-weight:400;opacity:.8;font-size:11px;margin-left:4px;}
+
+/* ---------- Calendar ---------- */
+.legend{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;font-size:11px;color:var(--ink-soft);}
+.legend-dot{display:inline-flex;align-items:center;gap:5px;}
+.legend-dot i{width:9px;height:9px;border-radius:50%;display:inline-block;}
+.weekday-row{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-bottom:8px;}
+.weekday-row div{
+  text-align:center;font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;
+  color:var(--primary-700);padding-bottom:4px;
+}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;}
+.day-cell{
+  position:relative;min-height:104px;border-radius:var(--radius-sm);
+  border:1px solid var(--line);background:var(--paper);
+  padding:7px 8px;display:flex;flex-direction:column;gap:5px;cursor:pointer;
+  text-align:left;font-family:inherit;color:inherit;
+}
+.day-cell:hover{box-shadow:var(--shadow-sm);border-color:var(--primary);}
+.day-cell.blank{visibility:hidden;cursor:default;}
+.day-cell.empty{cursor:default;background:transparent;border-style:dashed;border-color:var(--line-soft);}
+.day-cell.empty:hover{box-shadow:none;border-color:var(--line-soft);}
+.day-cell.is-today{box-shadow:0 0 0 2px var(--primary) inset;}
+.day-cell[data-tipo="descanso"]{background:var(--rest-bg);border-style:dashed;}
+.day-cell[data-tipo="prova"]{background:var(--exam-bg);border-color:var(--exam);}
+.day-num{font-family:var(--font-mono);font-size:11px;color:var(--ink-faint);}
+.day-cell.empty .day-num{color:var(--ink-faint);}
+.day-tag{
+  font-size:8.5px;text-transform:uppercase;letter-spacing:.4px;font-weight:700;
+  display:inline-flex;align-self:flex-start;padding:2px 6px;border-radius:5px;
+}
+.tag-Fácil{color:var(--easy);background:var(--easy-bg);}
+.tag-Médio{color:var(--medium);background:var(--medium-bg);}
+.tag-Difícil{color:var(--hard);background:var(--hard-bg);}
+.tag-Revisão{color:var(--review);background:var(--review-bg);}
+.tag-Simulado{color:var(--sim);background:var(--sim-bg);}
+.day-tema{
+  font-family:var(--font-display);font-size:12.2px;line-height:1.26;color:var(--ink);
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1;
+}
+.day-cell[data-tipo="descanso"] .day-tema,.day-cell[data-tipo="prova"] .day-tema{font-size:11.5px;color:var(--ink-soft);}
+.day-foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto;}
+.day-time{font-family:var(--font-mono);font-size:10.5px;color:var(--ink-soft);}
+.day-check{
+  width:18px;height:18px;border-radius:50%;border:1.5px solid var(--line);
+  display:flex;align-items:center;justify-content:center;font-size:11px;color:transparent;flex:none;
+  background:var(--paper);
+}
+.day-cell.is-completed .day-check{background:var(--primary);border-color:var(--primary);color:#fff;}
+.day-cell.is-completed{opacity:.82;}
+.day-cell.is-completed .day-tema{text-decoration:line-through;text-decoration-color:var(--line);text-decoration-thickness:1px;}
+
+/* ---------- Footer ---------- */
+.site-footer{margin-top:34px;font-size:11.5px;color:var(--ink-faint);text-align:center;padding:0 16px;}
+.site-footer p{margin:4px 0;}
+
+/* ---------- Modal ---------- */
+.modal-overlay{
+  position:fixed;inset:0;background:rgba(15,20,18,.55);
+  display:flex;align-items:flex-start;justify-content:center;
+  padding:24px 14px;overflow-y:auto;z-index:50;
+}
+.modal-overlay.hidden{display:none;}
+.modal{
+  background:var(--paper);border-radius:var(--radius);max-width:640px;width:100%;
+  box-shadow:var(--shadow);margin:auto 0;
+}
+.modal-head{
+  padding:18px 22px 14px;border-bottom:1px solid var(--line-soft);
+  display:flex;justify-content:space-between;align-items:flex-start;gap:10px;
+}
+.modal-head .date-line{font-size:12px;color:var(--ink-soft);text-transform:capitalize;}
+.modal-head h2{font-family:var(--font-display);font-size:19px;margin:4px 0 8px;color:var(--ink);}
+.badge-row{display:flex;gap:8px;flex-wrap:wrap;}
+.badge{font-size:11px;padding:3px 10px;border-radius:999px;font-weight:600;border:1px solid transparent;}
+.badge-area{background:var(--primary-100);color:var(--primary-700);}
+.modal-close{
+  background:none;border:none;font-size:20px;color:var(--ink-faint);cursor:pointer;line-height:1;padding:2px 6px;
+}
+.modal-body{padding:18px 22px 22px;}
+.section-title{
+  font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--primary-700);
+  margin:22px 0 8px;display:flex;align-items:center;gap:6px;
+}
+.section-title:first-child{margin-top:0;}
+.subtopic-list{margin:0;padding-left:18px;font-size:13.5px;color:var(--ink-soft);}
+.subtopic-list li{margin-bottom:4px;}
+
+/* checkable topics */
+.topic-progress{display:flex;align-items:center;gap:10px;margin:4px 0 12px;}
+.topic-progress .tp-track{flex:1;height:8px;border-radius:999px;background:var(--line-soft);overflow:hidden;border:1px solid var(--line);}
+.topic-progress .tp-fill{height:100%;background:linear-gradient(90deg,var(--accent),#E2913F);border-radius:999px;transition:width .3s ease;}
+.topic-progress .tp-label{font-size:11.5px;color:var(--ink-soft);font-family:var(--font-mono);white-space:nowrap;}
+.topic-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px;}
+.topic-item{
+  display:flex;align-items:flex-start;gap:10px;padding:8px 10px;border-radius:8px;cursor:pointer;
+  font-size:13.5px;line-height:1.4;color:var(--ink);border:1px solid transparent;
+}
+.topic-item:hover{background:var(--line-soft);}
+.topic-item input{
+  appearance:none;-webkit-appearance:none;width:18px;height:18px;border:1.6px solid var(--line);
+  border-radius:5px;flex:none;margin-top:1px;cursor:pointer;position:relative;background:var(--paper);
+}
+.topic-item input:checked{background:var(--accent);border-color:var(--accent);}
+.topic-item input:checked::after{
+  content:"✓";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:12px;font-weight:700;
+}
+.topic-item.done span{text-decoration:line-through;text-decoration-color:var(--ink-faint);color:var(--ink-soft);}
+.topics-actions{display:flex;gap:8px;margin-top:8px;}
+
+.timer-box{
+  display:flex;align-items:center;gap:16px;background:var(--primary-100);border-radius:var(--radius-sm);
+  padding:14px 16px;flex-wrap:wrap;
+}
+.timer-display{font-family:var(--font-mono);font-size:30px;color:var(--primary-700);font-weight:600;letter-spacing:1px;}
+.timer-goal{font-size:11.5px;color:var(--ink-soft);}
+.timer-btns{display:flex;gap:8px;margin-left:auto;}
+.btn{
+  border:1px solid var(--line);background:var(--paper);color:var(--ink);
+  padding:8px 14px;border-radius:999px;font-size:12.5px;font-weight:600;cursor:pointer;
+}
+.btn:hover{border-color:var(--primary);}
+.btn-primary{background:var(--primary);color:#fff;border-color:var(--primary);}
+.btn-primary:hover{background:var(--primary-700);}
+.btn-ghost{background:transparent;border-color:transparent;color:var(--primary-700);}
+.btn-sm{padding:5px 11px;font-size:11.5px;}
+.btn:disabled{opacity:.5;cursor:not-allowed;}
+
+.complete-row{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:24px;
+  padding-top:16px;border-top:1px solid var(--line-soft);flex-wrap:wrap;
+}
+.complete-toggle{display:flex;align-items:center;gap:9px;cursor:pointer;font-size:13.5px;font-weight:600;}
+.complete-toggle input{width:18px;height:18px;accent-color:var(--primary);}
+
+.qty-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap;}
+.qty-row select{
+  border:1px solid var(--line);border-radius:6px;padding:5px 8px;font-size:12.5px;background:var(--paper);
+}
+.quiz-list{display:flex;flex-direction:column;gap:14px;margin-top:12px;}
+.quiz-item{border:1px solid var(--line);border-radius:var(--radius-sm);padding:12px 14px;background:#FBFCFA;}
+.quiz-stem{font-size:13.5px;margin-bottom:8px;}
+.quiz-opt{
+  display:block;width:100%;text-align:left;border:1px solid var(--line);background:var(--paper);
+  border-radius:7px;padding:7px 10px;margin-bottom:6px;font-size:13px;cursor:pointer;
+}
+.quiz-opt:hover{border-color:var(--primary);}
+.quiz-opt.selected{border-color:var(--primary);background:var(--primary-100);}
+.quiz-opt.correct{border-color:var(--easy);background:var(--easy-bg);color:var(--easy);font-weight:600;}
+.quiz-opt.incorrect{border-color:var(--hard);background:var(--hard-bg);color:var(--hard);font-weight:600;}
+.quiz-opt:disabled{cursor:default;}
+.quiz-explain{font-size:12.5px;color:var(--ink-soft);margin-top:8px;background:var(--primary-100);padding:8px 10px;border-radius:7px;display:none;}
+.quiz-explain.show{display:block;}
+.quiz-score{font-size:12.5px;color:var(--ink-soft);margin-top:6px;font-weight:600;}
+
+textarea.discursive-input{
+  width:100%;min-height:140px;border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:10px 12px;font-family:inherit;font-size:13.5px;resize:vertical;
+}
+.discursive-prompt{
+  font-size:13px;color:var(--ink);background:var(--accent-100);border-radius:var(--radius-sm);
+  padding:10px 12px;margin-bottom:10px;font-style:italic;
+}
+.consensus-row{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--ink-soft);margin:10px 0;}
+.correction-box{
+  margin-top:14px;background:var(--primary-100);border-radius:var(--radius-sm);padding:14px 16px;
+  font-size:13px;line-height:1.55;white-space:normal;
+}
+.correction-box p{margin:0 0 8px;}
+.correction-box strong{color:var(--primary-700);}
+.loading-line{font-size:12.5px;color:var(--ink-soft);display:flex;align-items:center;gap:8px;}
+.spinner{
+  width:13px;height:13px;border-radius:50%;border:2px solid var(--line);border-top-color:var(--primary);
+  animation:spin .7s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg);}}
+.error-line{font-size:12.5px;color:var(--hard);background:var(--hard-bg);padding:8px 10px;border-radius:7px;margin-top:8px;}
+
+.settings-field{margin-bottom:14px;}
+.settings-field label{display:block;font-size:12.5px;font-weight:600;margin-bottom:5px;color:var(--ink);}
+.settings-field input[type=text],.settings-field input[type=password]{
+  width:100%;border:1px solid var(--line);border-radius:7px;padding:8px 10px;font-size:13px;font-family:var(--font-mono);
+}
+.settings-help{font-size:11.5px;color:var(--ink-soft);margin-top:6px;line-height:1.5;}
+.danger-zone{margin-top:22px;padding-top:16px;border-top:1px solid var(--line-soft);}
+
+.toast{
+  position:fixed;bottom:18px;left:50%;transform:translateX(-50%);
+  background:var(--primary-700);color:#fff;padding:10px 18px;border-radius:999px;
+  font-size:12.5px;box-shadow:var(--shadow);z-index:80;opacity:0;transition:opacity .25s ease;pointer-events:none;
+}
+.toast.show{opacity:1;}
+
+.confirm-actions{display:flex;gap:10px;margin-top:18px;justify-content:flex-end;}
+
+@media (max-width:680px){
+  .cal-grid{gap:5px;}
+  .day-cell{min-height:84px;padding:5px 6px;}
+  .day-tema{font-size:10.8px;-webkit-line-clamp:3;}
+  .weekday-row div{font-size:9.5px;}
+  .stamp{width:78px;height:78px;}
+  .stamp .stamp-num{font-size:20px;}
+  .masthead-inner{flex-direction:column;}
+  .masthead-actions{align-self:flex-end;}
+  .timer-display{font-size:24px;}
+}
+@media (max-width:420px){
+  .day-tema{display:none;}
+  .day-cell{min-height:52px;}
+  .day-tag{font-size:7.5px;}
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <div class="masthead-id">
+      <div class="seal">CG</div>
+      <div>
+        <h1>Plano de Estudos — Farmacêutico</h1>
+        <p class="sub">Concurso Público — Prefeitura Municipal de Campina Grande/PB</p>
+        <p class="meta-line">Edital nº 01/2026 · Banca IDECAN · Cargo 50 — Farmacêutico · R$ 3.047,01 · 30h/semana · 05 vagas</p>
+      </div>
+    </div>
+    <div class="masthead-actions">
+      <div class="stamp" id="countdownStamp">
+        <span class="stamp-num" id="countdownNum">—</span>
+        <span class="stamp-label">dias até a prova</span>
+      </div>
+      <button class="icon-btn" id="btnSettings" title="Configurações" aria-label="Configurações">⚙</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="progress-panel">
+    <div class="card">
+      <div class="progress-top">
+        <div class="big" id="progressHeadline">0 de 62 dias de estudo concluídos</div>
+        <div class="stat-small" id="progressSub">0% do plano · 0h estudadas no total</div>
+      </div>
+      <div class="bar-track"><div class="bar-fill" id="globalBarFill" style="width:0%"></div></div>
+      <div class="area-bars" id="areaBars"></div>
+
+      <details class="info-toggle">
+        <summary>Sobre este plano e a prova objetiva</summary>
+        <div class="info-body">
+          <p>O cronograma cobre 100% do conteúdo programático do Edital nº 01/2026 (Anexo II) para o cargo de Farmacêutico,
+          distribuído ao longo de 10 semanas, com dificuldades intercaladas e dias de simulado/revisão geral.
+          Cada dia de estudo traz uma lista de 12 tópicos principais marcáveis, com barra de progresso própria.
+          Os tópicos foram organizados a partir de fontes oficiais brasileiras (Leis 5.991/1973, 8.080/1990, 8.142/1990,
+          13.021/2014; Decreto 7.508/2011; Portaria SVS/MS 344/1998; RDCs da ANVISA; PNM, PNAF, RENAME e resoluções do CFF)
+          e de revisões consolidadas de farmacologia (farmacocinética/ADME e farmacodinâmica).
+          A prova objetiva tem 40 questões e duração de 3h, conforme o quadro abaixo:</p>
+          <table>
+            <tr><th>Disciplina</th><th>Questões</th><th>Peso/questão</th><th>Pontos</th></tr>
+            <tr><td>Língua Portuguesa</td><td>10</td><td>1,00</td><td>10,00</td></tr>
+            <tr><td>Noções de Informática</td><td>05</td><td>1,00</td><td>5,00</td></tr>
+            <tr><td>História de Campina Grande/PB</td><td>03</td><td>1,00</td><td>3,00</td></tr>
+            <tr><td>Legislação e Ética no Serviço Público</td><td>03</td><td>1,00</td><td>3,00</td></tr>
+            <tr><td>Conhecimentos Específicos (Farmacêutico)</td><td>20</td><td>2,00</td><td>40,00</td></tr>
+            <tr><td><strong>Total</strong></td><td><strong>40</strong></td><td>—</td><td><strong>60,00</strong></td></tr>
+          </table>
+          <p>Aprovação: no mínimo 50% da pontuação total, além do mínimo de 1,00 ponto em cada disciplina de Conhecimentos
+          Gerais e 2,00 pontos em cada disciplina de Conhecimentos Específicos (item 10.3 do edital).</p>
+          <p><strong>Sobre as questões e correções geradas por IA:</strong> os exercícios de cada dia e as correções
+          discursivas são gerados pelo Claude no estilo da banca IDECAN, como treino complementar — eles não são
+          questões oficiais e podem conter imprecisões. Use-os para praticar o raciocínio, mas confirme pontos de
+          legislação direto na fonte oficial. Essas funções de IA só funcionam com o arquivo aberto dentro do Claude;
+          fora dele, é possível usar sua própria chave de API em "Configurações".</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <nav class="month-tabs" id="monthTabs"></nav>
+
+  <section class="calendar">
+    <div class="legend" id="legend">
+      <span class="legend-dot"><i style="background:var(--easy)"></i>Fácil</span>
+      <span class="legend-dot"><i style="background:var(--medium)"></i>Médio</span>
+      <span class="legend-dot"><i style="background:var(--hard)"></i>Difícil</span>
+      <span class="legend-dot"><i style="background:var(--review)"></i>Revisão</span>
+      <span class="legend-dot"><i style="background:var(--sim)"></i>Simulado</span>
+      <span class="legend-dot"><i style="background:var(--rest)"></i>Descanso</span>
+      <span class="legend-dot"><i style="background:var(--exam)"></i>Dia da prova</span>
+    </div>
+    <div class="weekday-row">
+      <div>Dom</div><div>Seg</div><div>Ter</div><div>Qua</div><div>Qui</div><div>Sex</div><div>Sáb</div>
+    </div>
+    <div class="cal-grid" id="calGrid"></div>
+  </section>
+
+</main>
+
+<footer class="site-footer wrap">
+  <p>Conteúdo programático baseado no Edital nº 01/2026 da Prefeitura Municipal de Campina Grande/PB (banca IDECAN), publicado em 09/05/2026.</p>
+  <p>Ferramenta de estudo independente, sem vínculo com o IDECAN ou com a Prefeitura de Campina Grande. Prova prevista para 30/08/2026.</p>
+  <p>Feito com Claude · seus dados de progresso ficam salvos apenas no seu navegador/conta.</p>
+</footer>
+
+<!-- Day modal -->
+<div class="modal-overlay hidden" id="dayModalOverlay">
+  <div class="modal" id="dayModal" role="dialog" aria-modal="true" aria-labelledby="dayModalTitle">
+    <div class="modal-head">
+      <div>
+        <div class="date-line" id="dayModalDate"></div>
+        <h2 id="dayModalTitle"></h2>
+        <div class="badge-row" id="dayModalBadges"></div>
+      </div>
+      <button class="modal-close" id="dayModalClose" aria-label="Fechar">✕</button>
+    </div>
+    <div class="modal-body" id="dayModalBody"></div>
+  </div>
+</div>
+
+<!-- Settings modal -->
+<div class="modal-overlay hidden" id="settingsOverlay">
+  <div class="modal" id="settingsModal" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+    <div class="modal-head">
+      <div><h2 id="settingsTitle">Configurações</h2></div>
+      <button class="modal-close" id="settingsClose" aria-label="Fechar">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="settings-field">
+        <label for="apiKeyInput">Chave de API da Anthropic (opcional)</label>
+        <input type="password" id="apiKeyInput" placeholder="sk-ant-...">
+        <p class="settings-help">
+          As funções de IA (gerar questões e corrigir discursivas) funcionam automaticamente quando este arquivo
+          é usado dentro do Claude. Se você abrir este arquivo fora do Claude (por exemplo, hospedado no GitHub
+          Pages), adicione aqui sua própria chave da API da Anthropic para que essas funções continuem
+          funcionando. A chave fica salva apenas no seu navegador.
+        </p>
+      </div>
+      <div class="settings-field">
+        <button class="btn" id="btnSaveKey">Salvar chave</button>
+        <button class="btn btn-ghost" id="btnClearKey">Remover chave</button>
+      </div>
+      <div class="danger-zone">
+        <div class="section-title">Zona de risco</div>
+        <p class="settings-help">Isso apaga todo o progresso registrado (dias concluídos, tempo estudado, respostas e correções).</p>
+        <button class="btn" id="btnResetProgress" style="border-color:var(--hard);color:var(--hard);">Reiniciar todo o progresso</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Confirm modal (generic) -->
+<div class="modal-overlay hidden" id="confirmOverlay">
+  <div class="modal" style="max-width:380px;">
+    <div class="modal-body">
+      <p id="confirmMessage" style="font-size:13.5px;"></p>
+      <div class="confirm-actions">
+        <button class="btn" id="confirmCancel">Cancelar</button>
+        <button class="btn btn-primary" id="confirmOk" style="background:var(--hard);border-color:var(--hard);">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ====================== DATA ====================== */
+const SCHEDULE = {"2026-06-19":{"area":"Conhecimentos Específicos","tema":"Formas farmacêuticas e vias de administração","dificuldade":"Fácil","tempo":"3h","subtopicos":["Classificação das drogas e formas farmacêuticas","Vias de administração (oral, parenteral, tópica, etc.)","Vantagens e limitações de cada via"],"tipo":"estudo","topicos":["Conceito de medicamento, fármaco, droga, insumo e correlato (Lei 5.991/1973)","Formas farmacêuticas sólidas: comprimidos, drágeas, cápsulas, pós e granulados","Formas farmacêuticas líquidas: soluções, xaropes, suspensões e emulsões","Formas farmacêuticas semissólidas: pomadas, cremes, géis e pastas","Vias enterais: oral, sublingual e retal — características e indicações","Vias parenterais: IV, IM, SC, intradérmica — vantagens e limitações","Vias tópica, transdérmica, inalatória, oftálmica, nasal e otológica","Efeito de primeira passagem hepática e impacto na biodisponibilidade","Vantagens e desvantagens de cada via quanto a início de ação e adesão","Sistemas de liberação modificada (controlada, prolongada, entérica)","Fatores que influenciam a escolha da via (paciente, fármaco, urgência)","Excipientes e veículos: função nas formas farmacêuticas"]},"2026-06-20":{"area":"Língua Portuguesa","tema":"Leitura e interpretação textual","dificuldade":"Fácil","tempo":"3h","subtopicos":["Compreensão e interpretação de textos","Estruturação do texto e dos parágrafos","Significação contextual de palavras e expressões"],"tipo":"estudo","topicos":["Compreensão x interpretação: identificar informação explícita e implícita","Ideia central, tese e intenção comunicativa do texto","Estruturação do texto: introdução, desenvolvimento e conclusão","Estruturação dos parágrafos: tópico frasal e progressão temática","Tipologia textual: narração, descrição, dissertação e injunção","Gêneros textuais e sua relação com o suporte e a finalidade","Significação contextual de palavras e expressões","Denotação x conotação; figuras de linguagem mais cobradas","Inferência: deduzir conclusões a partir das pistas do texto","Pressuposto e subentendido (não-ditos do texto)","Relações entre partes do texto: causa, consequência, oposição, condição","Equivalência e transformação de estruturas mantendo o sentido"]},"2026-06-22":{"area":"Conhecimentos Específicos","tema":"Assistência farmacêutica: conceito e ciclo","dificuldade":"Médio","tempo":"3h30","subtopicos":["Conceito de assistência farmacêutica","Ciclo: seleção, programação, aquisição, armazenamento, distribuição e dispensação","Atenção farmacêutica como modelo de cuidado"],"tipo":"estudo","topicos":["Conceito de Assistência Farmacêutica (PNAF — Resolução CNS 338/2004)","Diferença entre assistência farmacêutica e atenção/cuidado farmacêutico","Ciclo da AF como sistema: caráter cíclico e interdependente das etapas","Etapa de seleção de medicamentos (eixo central do ciclo)","Etapa de programação: estimativa de necessidades","Etapa de aquisição: modalidades e qualificação de fornecedores","Etapa de armazenamento: boas práticas e conservação","Etapa de distribuição: fluxos e rastreabilidade","Etapa de dispensação: orientação ao usuário e uso racional","Gestão e uso da informação no ciclo (Hórus, BNAFAR)","Recursos humanos e infraestrutura como suporte ao ciclo","Papel do farmacêutico como gestor da assistência farmacêutica"]},"2026-06-23":{"area":"História de Campina Grande/PB","tema":"Origens e formação política de Campina Grande (1697–1864)","dificuldade":"Fácil","tempo":"3h","subtopicos":["Aldeamento de Teodósio de Oliveira Ledo (1697)","Freguesia de Nossa Senhora da Conceição (1769)","Vila Nova da Rainha (1790) e emancipação política (11/10/1864)"],"tipo":"estudo","topicos":["Posição geográfica estratégica: passagem do sertão para o litoral","Aldeamento indígena por Teodósio de Oliveira Ledo (1697)","Origem do nome: assentamento em uma grande campina/planície","Criação da Freguesia de Nossa Senhora da Conceição (1769)","Emancipação da dependência da Freguesia de Milagres","Vila Nova da Rainha (1790) — elevação à condição de vila","Importância dos tropeiros e da feira na formação do povoado","Da feira de gado ao papel de entreposto comercial regional","Elevação à categoria de cidade em 11/10/1864 (Lei Provincial nº 137)","Configuração urbana inicial: largos, ruas e principais edificações","Nossa Senhora da Conceição como padroeira do município","Comparação com Areia, então principal cidade do interior paraibano"]},"2026-06-24":{"area":"Conhecimentos Específicos","tema":"Dispensação e Atenção Farmacêutica","dificuldade":"Fácil","tempo":"3h","subtopicos":["Conceito e etapas da dispensação","Atenção farmacêutica: definição e objetivos","Papel do farmacêutico na orientação ao paciente"],"tipo":"estudo","topicos":["Conceito de dispensação (Lei 5.991/1973 e RDC ANVISA 44/2009)","Diferença entre dispensação, distribuição e venda","Boas Práticas de Dispensação em farmácias e drogarias","Análise da prescrição: legibilidade, posologia e interações","Orientação farmacêutica ao usuário no momento da dispensação","Atenção Farmacêutica (Consenso Brasileiro de Atenção Farmacêutica, 2002)","Pharmaceutical care: identificação e resolução de problemas relacionados a medicamentos (PRM)","Acompanhamento/seguimento farmacoterapêutico do paciente","Serviços farmacêuticos clínicos (Resolução CFF 585/2013 e 586/2013)","Prescrição farmacêutica: limites e condições legais","Registro das intervenções e da evolução farmacêutica","Promoção do uso racional de medicamentos e adesão ao tratamento"]},"2026-06-25":{"area":"Língua Portuguesa","tema":"Morfologia, formação e classes de palavras","dificuldade":"Fácil","tempo":"3h","subtopicos":["Estrutura e formação de palavras","Funções das classes de palavras","Flexão nominal (introdução)"],"tipo":"estudo","topicos":["Estrutura das palavras: radical, afixos, vogal e consoante de ligação","Processos de formação: derivação (prefixal, sufixal, parassintética)","Processos de formação: composição (justaposição e aglutinação)","Outros processos: hibridismo, abreviação, sigla, onomatopeia","Substantivo: classificação e flexões","Adjetivo: flexões e locução adjetiva","Artigo, numeral e pronome: classificação e emprego","Verbo: conjugações, vozes e formas nominais (visão geral)","Advérbio e locução adverbial: circunstâncias","Preposição e conjunção: valores semânticos","Interjeição e palavras denotativas","Distinção entre classes em contexto (ex.: que, se, como)"]},"2026-06-26":{"area":"Conhecimentos Específicos","tema":"Lei nº 8.080/1990 e Lei nº 8.142/1990","dificuldade":"Médio","tempo":"3h30","subtopicos":["Lei Orgânica da Saúde: princípios e diretrizes do SUS","Participação social e financiamento (Lei 8.142)","Organização e funcionamento do SUS"],"tipo":"estudo","topicos":["Lei 8.080/90: objeto, campo de atuação e abrangência do SUS","Princípios doutrinários: universalidade, integralidade e equidade","Princípios organizativos: descentralização, regionalização, hierarquização","Participação da comunidade como diretriz","Competências das esferas federal, estadual e municipal","Atribuições do SUS (vigilância, assistência, insumos, recursos humanos)","Assistência terapêutica integral, inclusive farmacêutica (art. 19-M e seguintes)","Lei 8.142/90: participação da comunidade na gestão do SUS","Conferências de Saúde: composição e periodicidade","Conselhos de Saúde: caráter permanente, deliberativo e paritário","Transferências intergovernamentais de recursos (fundo a fundo)","Requisitos para o município receber recursos (art. 4º da Lei 8.142)"]},"2026-06-27":{"area":"Noções de Informática","tema":"Hardware e sistemas operacionais","dificuldade":"Fácil","tempo":"3h","subtopicos":["Dispositivos de armazenamento, memórias e periféricos","Windows/Linux: pastas, diretórios, arquivos e atalhos","Área de trabalho e área de transferência"],"tipo":"estudo","topicos":["Componentes do hardware: CPU, placa-mãe, memória e fonte","Tipos de memória: RAM, ROM, cache e memória virtual","Dispositivos de armazenamento: HD, SSD, pen drive, nuvem","Periféricos de entrada, saída e entrada/saída","Unidades de medida de armazenamento (bit, byte, KB, MB, GB, TB)","Extensões de arquivos comuns (.docx, .pdf, .xlsx, .jpg, .exe)","Sistemas operacionais: conceito e funções principais","Windows: pastas, diretórios, arquivos e atalhos","Linux: estrutura de diretórios e noções básicas","Área de trabalho, barra de tarefas e área de transferência","Manipulação de arquivos e pastas (copiar, mover, renomear, excluir)","Uso de menus, programas e interação entre aplicativos"]},"2026-06-29":{"area":"Conhecimentos Específicos","tema":"Farmacocinética: ADME","dificuldade":"Difícil","tempo":"4h","subtopicos":["Absorção, distribuição, biotransformação e eliminação de fármacos","Fatores que influenciam o ADME","Relação com a resposta terapêutica"],"tipo":"estudo","topicos":["Definição de farmacocinética: o que o organismo faz com o fármaco","Absorção: mecanismos de transporte através de membranas","Fatores que afetam a absorção (pH, área, fluxo, formulação)","Biodisponibilidade e efeito de primeira passagem","Distribuição: volume de distribuição e barreiras (hematoencefálica, placentária)","Ligação às proteínas plasmáticas e fração livre ativa","Metabolismo (biotransformação): reações de fase I e fase II","Sistema enzimático do citocromo P450 e indutores/inibidores","Pró-fármacos e metabólitos ativos","Excreção: vias renal, biliar, pulmonar e outras","Parâmetros: meia-vida, clearance (depuração) e estado de equilíbrio","Cinética de ordem zero x primeira ordem"]},"2026-06-30":{"area":"Língua Portuguesa","tema":"Coesão e coerência textual","dificuldade":"Médio","tempo":"3h30","subtopicos":["Pronomes e expressões referenciais","Nexos e operadores sequenciais","Equivalência e transformação de estruturas"],"tipo":"estudo","topicos":["Conceito de coesão (conexão entre as partes do texto)","Coesão referencial: anáfora e catáfora","Pronomes e expressões referenciais (substituição e retomada)","Coesão sequencial: conectivos e operadores argumentativos","Elipse e elementos subentendidos como recurso coesivo","Repetição, sinonímia e hiperonímia na progressão textual","Conceito de coerência (sentido global do texto)","Coerência e a relação lógica entre as ideias","Fatores de coerência: continuidade, progressão, não-contradição","Nexos e operadores sequenciais (portanto, contudo, além disso)","Equivalência e transformação de estruturas preservando o sentido","Identificação de quebras de coesão/coerência em questões"]},"2026-07-01":{"area":"Conhecimentos Específicos","tema":"SUS: princípios, CF arts. 196–200 e Decreto 7.508/2011","dificuldade":"Médio","tempo":"3h30","subtopicos":["Princípios e diretrizes do SUS","Constituição Federal, arts. 196 a 200","Decreto nº 7.508/2011: regiões de saúde, RAS, mapa da saúde"],"tipo":"estudo","topicos":["CF art. 196: saúde como direito de todos e dever do Estado","CF art. 197: relevância pública das ações e serviços de saúde","CF art. 198: rede regionalizada e hierarquizada; diretrizes do SUS","Financiamento do SUS (art. 198, §§) e EC 29","CF art. 199: participação da iniciativa privada de forma complementar","CF art. 200: competências do SUS (vigilância, insumos, RH, meio ambiente)","Decreto 7.508/2011: regulamenta a Lei 8.080/90","Região de Saúde e suas características","Mapa da Saúde e Comissões Intergestores (CIT, CIB, CIR)","Contrato Organizativo da Ação Pública da Saúde (COAP)","RENASES — Relação Nacional de Ações e Serviços de Saúde","RENAME no Decreto 7.508 e o acesso à assistência farmacêutica"]},"2026-07-02":{"area":"Legislação e Ética no Serviço Público","tema":"Ética no serviço público e princípios da Administração Pública","dificuldade":"Fácil","tempo":"3h","subtopicos":["Ética e moral: definição e distinção","Valores, honestidade, integridade, decoro e zelo","Princípios LIMPE (legalidade, impessoalidade, moralidade, publicidade, eficiência)"],"tipo":"estudo","topicos":["Ética x moral: definição e distinção","Ética e função pública: o servidor a serviço do interesse coletivo","Valores: honestidade, integridade, decoro e zelo","Ética, democracia, cidadania e papel do servidor público","Princípio da legalidade (administração só faz o que a lei autoriza)","Princípio da impessoalidade (finalidade pública, vedação de favorecimento)","Princípio da moralidade administrativa","Princípio da publicidade (transparência como regra)","Princípio da eficiência (resultado e boa gestão)","Aplicação dos princípios éticos na Administração Pública","Improbidade administrativa: noções gerais (Lei 8.429/92)","Conduta vedada e conflito de interesses no serviço público"]},"2026-07-03":{"area":"Conhecimentos Específicos","tema":"Farmacodinâmica: mecanismo de ação e dose-efeito","dificuldade":"Difícil","tempo":"4h","subtopicos":["Mecanismo de ação dos fármacos","Relação dose-efeito","Agonistas e antagonistas"],"tipo":"estudo","topicos":["Definição de farmacodinâmica: o que o fármaco faz no organismo","Conceito de receptor e interação fármaco-receptor (afinidade)","Tipos de receptores: canais iônicos, acoplados a proteína G, enzimáticos, nucleares","Atividade intrínseca e transdução de sinal","Curva dose-resposta (gradual e quantal) e formato sigmoide","Potência x eficácia: distinção conceitual","Agonistas plenos, parciais e agonistas inversos","Antagonistas competitivos x não-competitivos (reversível/irreversível)","EC50, Emax e janela/índice terapêutico","Dessensibilização, tolerância, taquifilaxia; up e downregulation de receptores","Mecanismos não mediados por receptores","Interações farmacodinâmicas: sinergismo, adição e antagonismo"]},"2026-07-04":{"tipo":"simulado","area":"Simulado Geral","tema":"Simulado 1 — Revisão dos primeiros temas","dificuldade":"Simulado","tempo":"4h","subtopicos":["Questões estilo IDECAN misturando todos os temas estudados até aqui","Simule as 3h de prova real e depois corrija com calma","Anote os temas em que sentiu mais dificuldade"]},"2026-07-06":{"area":"Conhecimentos Específicos","tema":"Controle de estoque e estabilidade de medicamentos","dificuldade":"Fácil","tempo":"3h","subtopicos":["Métodos de controle de estoque (curva ABC, ponto de pedido)","Estabilidade de medicamentos e fatores de degradação","Boas práticas de armazenamento"],"tipo":"estudo","topicos":["Objetivos do controle de estoque na farmácia/CAF","Curva ABC: classificação por valor e relevância","Ponto de pedido, estoque mínimo, máximo e de segurança","Consumo Médio Mensal (CMM) e Consumo Médio Diário (CMD)","Métodos de previsão: consumo histórico, perfil epidemiológico, oferta","Inventário e acuracidade do estoque (físico x sistema)","Sistema PEPS/FEFO: primeiro que vence, primeiro que sai","Estabilidade de medicamentos: conceito e tipos de degradação","Fatores que afetam a estabilidade (temperatura, luz, umidade, ar)","Prazo de validade e estudos de estabilidade (RDC ANVISA 318/2019)","Indicadores de gestão de estoque (giro, cobertura, perdas)","Controle de medicamentos vencidos e descarte adequado"]},"2026-07-07":{"area":"Língua Portuguesa","tema":"Significação contextual e equivalência de estruturas","dificuldade":"Médio","tempo":"3h30","subtopicos":["Significação contextual de palavras e expressões","Equivalência e transformação de estruturas frasais","Reescrita mantendo o sentido original"],"tipo":"estudo","topicos":["Polissemia: a mesma palavra com sentidos diferentes em contextos","Homonímia e paronímia (ex.: cessão/sessão, ratificar/retificar)","Sinonímia e antonímia no contexto","Denotação x conotação aplicada à interpretação","Sentido figurado: metáfora, metonímia, ironia","Significação contextual de conectivos e pronomes","Reescritura de frases preservando o sentido original","Transformação de voz (ativa/passiva) e impacto no sentido","Substituição de termos por equivalentes (nominalização, etc.)","Ambiguidade: identificação e correção","Relações semânticas entre orações (causa, fim, concessão)","Adequação vocabular ao registro e à formalidade do texto"]},"2026-07-08":{"area":"Conhecimentos Específicos","tema":"Seleção e programação de medicamentos","dificuldade":"Médio","tempo":"3h30","subtopicos":["Critérios de seleção (RENAME, eficácia, segurança, custo)","Programação: estimativa de consumo e métodos de previsão","Integração com o ciclo da assistência farmacêutica"],"tipo":"estudo","topicos":["Seleção como primeira e estratégica etapa do ciclo da AF","Critérios de seleção: eficácia, segurança, qualidade e custo-efetividade","Base na RENAME e nas evidências científicas","Comissão de Farmácia e Terapêutica (CFT): composição e papel","Formulário terapêutico e padronização de medicamentos","Medicamentos essenciais: conceito (OMS) e importância","Programação: estimativa das quantidades a adquirir","Método do perfil de consumo histórico (CMM)","Método do perfil epidemiológico (demanda esperada)","Método da oferta de serviços e do consumo ajustado","Variáveis que afetam a programação (sazonalidade, perdas, demanda reprimida)","Articulação seleção-programação com financiamento e RENAME"]},"2026-07-09":{"area":"História de Campina Grande/PB","tema":"O ciclo do algodão e a expansão urbana","dificuldade":"Médio","tempo":"3h30","subtopicos":["Chegada da ferrovia (1907) e crescimento populacional","Apelidos históricos: 'Rainha da Borborema' e 'Liverpool brasileira'","Imigração estrangeira e declínio do ciclo do algodão (déc. de 1940)"],"tipo":"estudo","topicos":["Transição da economia: do gado/feira para o algodão","Campina Grande como 2º maior polo exportador de algodão do mundo","Apelido 'Liverpool brasileira' e auge econômico (até a década de 1940)","Chegada do trem (2 de outubro de 1907) e integração com o litoral","Papel da ferrovia no escoamento do 'ouro branco'","Crescimento populacional acelerado no início do século XX","Título de 'Rainha da Borborema' e referência regional","Influência de imigrantes estrangeiros (árabes, alemães, italianos, dinamarqueses)","Modernização urbana: energia elétrica, bancos, indústrias e comércio","Declínio do ciclo do algodão e a praga do bicudo","Transição para atividades industriais e de serviços","Estação Velha / Museu do Algodão como memória do período"]},"2026-07-10":{"area":"Conhecimentos Específicos","tema":"Armazenamento e distribuição de medicamentos","dificuldade":"Fácil","tempo":"3h","subtopicos":["Boas práticas de armazenamento (temperatura, luz, umidade)","Cadeia de frio e termolábeis","Distribuição: sistemas e fluxos logísticos"],"tipo":"estudo","topicos":["Boas Práticas de Armazenamento (BPA) na CAF e farmácia","Condições ambientais: temperatura, umidade, luz e ventilação","Áreas da CAF: recebimento, estocagem, separação e expedição","Organização física: paletes, estantes, distância de paredes e piso","Controle de temperatura: termômetros e mapeamento térmico","Cadeia de frio: medicamentos termolábeis (imunobiológicos, insulina)","Equipamentos da cadeia de frio e monitoramento contínuo","Medicamentos sujeitos a controle especial: guarda segura","Controle de pragas e limpeza no ambiente de armazenamento","Sistema FEFO/PEPS na distribuição","Distribuição: fluxos, requisição, rastreabilidade e transporte","Registro e conferência de entrada e saída (Hórus/BNAFAR)"]},"2026-07-11":{"area":"Língua Portuguesa","tema":"Sintaxe: coordenação e subordinação","dificuldade":"Difícil","tempo":"4h","subtopicos":["Processos de coordenação e subordinação","Orações subordinadas substantivas, adjetivas e adverbiais","Pontuação relacionada à sintaxe do período"],"tipo":"estudo","topicos":["Frase, oração e período (simples e composto)","Termos essenciais da oração: sujeito e predicado","Termos integrantes: complementos verbais e nominais; agente da passiva","Termos acessórios: adjunto adnominal, adverbial e aposto","Período composto por coordenação: orações independentes","Orações coordenadas sindéticas e assindéticas","Período composto por subordinação: oração principal e dependentes","Orações subordinadas substantivas (funções de termo da principal)","Orações subordinadas adjetivas (restritivas e explicativas)","Orações subordinadas adverbiais (circunstâncias)","Pontuação ligada à coordenação e subordinação","Análise sintática aplicada a questões de reescrita"]},"2026-07-13":{"area":"Conhecimentos Específicos","tema":"Política Nacional de Medicamentos e PNAF no SUS","dificuldade":"Médio","tempo":"3h30","subtopicos":["Política Nacional de Medicamentos (PNM)","Política Nacional de Assistência Farmacêutica (PNAF)","Diretrizes e objetivos de ambas no contexto do SUS"],"tipo":"estudo","topicos":["PNM — Portaria GM/MS 3.916/1998: objetivos e diretrizes","Diretrizes da PNM: adoção da RENAME, regulamentação sanitária, genéricos","Reorientação da assistência farmacêutica como diretriz","Promoção do uso racional e desenvolvimento científico-tecnológico","PNAF — Resolução CNS 338/2004: eixos estratégicos","AF como política norteadora para formulação de políticas setoriais","Garantia de acesso e equidade às ações de saúde como princípio","Manutenção de serviços de AF na rede do SUS","Blocos/componentes de financiamento da AF (Básico, Estratégico, Especializado)","Componente Básico da AF (CBAF) e financiamento tripartite","Componente Estratégico (CESAF): programas estratégicos","Componente Especializado (CEAF): medicamentos de maior complexidade"]},"2026-07-14":{"area":"Noções de Informática","tema":"Editor de textos (Word)","dificuldade":"Fácil","tempo":"3h","subtopicos":["Estrutura básica de documentos, formatação e fontes","Cabeçalhos, colunas, marcadores, tabelas e impressão","Índices, legendas, campos predefinidos e quebras de página"],"tipo":"estudo","topicos":["Estrutura básica do documento e tipos de exibição","Edição: selecionar, copiar, recortar, colar e localizar/substituir","Formatação de fonte: tipo, tamanho, estilo, cor e efeitos","Formatação de parágrafo: alinhamento, recuo, espaçamento e entrelinhas","Marcadores simbólicos e numéricos; listas de vários níveis","Cabeçalho, rodapé e numeração de páginas","Tabelas: inserção, formatação e manipulação","Colunas e quebras (de página, de seção e de coluna)","Estilos, sumário/índice automático e legendas","Inserção de objetos, imagens, formas e caixas de texto","Revisão: ortografia, gramática e controle de alterações/comentários","Impressão e configurações de página (margens, orientação, tamanho)"]},"2026-07-15":{"area":"Conhecimentos Específicos","tema":"Interações medicamentosas","dificuldade":"Médio","tempo":"3h30","subtopicos":["Tipos de interação: farmacocinética e farmacodinâmica","Interações clinicamente relevantes mais cobradas","Estratégias de prevenção e monitorização"],"tipo":"estudo","topicos":["Conceito de interação medicamentosa e relevância clínica","Interações farmacêuticas (incompatibilidades físico-químicas)","Interações farmacocinéticas na absorção","Interações farmacocinéticas na distribuição (deslocamento proteico)","Interações no metabolismo: indução e inibição enzimática (CYP450)","Interações na excreção (competição renal, alteração de pH urinário)","Interações farmacodinâmicas: sinergismo e adição","Interações farmacodinâmicas: antagonismo","Interações fármaco-alimento mais relevantes","Interações com fitoterápicos e plantas medicinais","Polifarmácia e risco em idosos (critérios de Beers/STOPP-START)","Estratégias de prevenção, monitorização e conduta"]},"2026-07-16":{"area":"Língua Portuguesa","tema":"Tempos e modos verbais; pontuação","dificuldade":"Médio","tempo":"3h30","subtopicos":["Emprego dos tempos e modos verbais","Regras de pontuação","Erros comuns em provas objetivas"],"tipo":"estudo","topicos":["Modo indicativo: certeza e seus tempos","Modo subjuntivo: hipótese, dúvida e seus tempos","Modo imperativo: ordem, pedido (afirmativo e negativo)","Presente, pretéritos (perfeito, imperfeito, mais-que-perfeito) e futuros","Correlação verbal entre orações (consecutio temporum)","Emprego do futuro do pretérito (condição e polidez)","Formas nominais (infinitivo, gerúndio, particípio) no período","Pontuação: vírgula entre termos da mesma função","Vírgula em adjuntos deslocados, apostos e vocativos","Vírgula nas orações coordenadas e subordinadas","Ponto e vírgula, dois-pontos e suas funções","Aspas, travessão, parênteses e reticências"]},"2026-07-17":{"area":"Conhecimentos Específicos","tema":"RENAME, PCDT e uso racional de medicamentos","dificuldade":"Médio","tempo":"3h30","subtopicos":["Relação Nacional de Medicamentos Essenciais (RENAME)","Protocolos Clínicos e Diretrizes Terapêuticas (PCDT)","Uso racional de medicamentos: conceito e estratégias"],"tipo":"estudo","topicos":["RENAME: conceito, finalidade e periodicidade de atualização","Estrutura da RENAME por componentes de financiamento da AF","Relação da RENAME com a seleção e com o acesso (Decreto 7.508)","CONITEC: incorporação, exclusão e alteração de tecnologias no SUS","Fluxo de avaliação de tecnologias em saúde (ATS)","PCDT: conceito e finalidade dos Protocolos Clínicos e Diretrizes Terapêuticas","Estrutura de um PCDT (critérios de inclusão/exclusão, tratamento, monitorização)","LME — Laudo para Solicitação de Medicamentos do CEAF","Uso Racional de Medicamentos (URM): conceito (OMS)","Os '5 certos'/ uso correto e os determinantes do uso irracional","Estratégias institucionais de promoção do URM","Farmacovigilância e notificação de eventos adversos"]},"2026-07-18":{"area":"Legislação e Ética no Serviço Público","tema":"Lei Orgânica do Município de Campina Grande","dificuldade":"Médio","tempo":"3h30","subtopicos":["Estrutura e organização do município","Competências do Executivo e Legislativo municipal","Pontos mais cobrados em provas do IDECAN para Campina Grande"],"tipo":"estudo","topicos":["Natureza e finalidade da Lei Orgânica Municipal","Princípios fundamentais e autonomia do município","Competências do município (próprias e comuns)","Estrutura do Poder Executivo municipal (Prefeito e Secretarias)","Estrutura do Poder Legislativo municipal (Câmara de Vereadores)","Processo legislativo municipal","Servidores públicos municipais: regime e princípios","Saúde no âmbito municipal e o SUS local","Administração pública municipal e seus princípios","Tributos e finanças do município (noções)","Participação popular e controle social","Dispositivos mais cobrados pela banca em provas municipais"]},"2026-07-20":{"area":"Conhecimentos Específicos","tema":"Medicamentos sob controle especial — Portaria SVS/MS nº 344/1998","dificuldade":"Difícil","tempo":"4h","subtopicos":["Listas de substâncias controladas (A, B, C)","Notificação de receita e escrituração","Receituário especial e talonários"],"tipo":"estudo","topicos":["Objeto e abrangência da Portaria SVS/MS 344/1998","Listas de substâncias: A1/A2/A3 (entorpecentes e psicotrópicos)","Listas B1/B2 (psicotrópicos) e suas restrições","Listas C1 a C5 (outras substâncias sujeitas a controle)","Notificação de Receita 'A' (amarela), 'B' (azul) e 'B2'","Receita de Controle Especial em duas vias","Quantidades máximas por prescrição e prazos de validade da receita","Escrituração: Livro de Registro Específico e SNGPC","Balanços (BMPO) e mapas/relatórios à autoridade sanitária","Guarda e armazenamento sob chave dos medicamentos controlados","Autorização Especial e responsabilidade do farmacêutico","Descarte e perda de medicamentos controlados"]},"2026-07-21":{"tipo":"simulado","area":"Simulado Geral","tema":"Simulado 2 — Ciclo da assistência farmacêutica e SUS","dificuldade":"Simulado","tempo":"4h","subtopicos":["Foque nas questões de legislação do SUS e ciclo da assistência farmacêutica","Cronometre 3h e depois faça a correção discursiva de 1 questão","Releia a Lei 5.991/1973 antes do simulado, se precisar"]},"2026-07-22":{"area":"Conhecimentos Específicos","tema":"Medicamentos genéricos e boas práticas de dispensação","dificuldade":"Fácil","tempo":"3h","subtopicos":["Conceito de medicamento genérico, similar e de referência","Bioequivalência exigida para genéricos","Boas práticas de dispensação na farmácia"],"tipo":"estudo","topicos":["Conceito de medicamento de referência, similar e genérico (Lei 9.787/1999)","Equivalência farmacêutica entre produtos","Bioequivalência e biodisponibilidade relativa exigidas para genéricos","Denominação pelo DCB/DCI e identificação visual do genérico","Intercambialidade: regras e responsabilidade do farmacêutico","RDC ANVISA 44/2009: Boas Práticas Farmacêuticas para dispensação","Análise da prescrição e orientação ao usuário","Atendimento e dispensação de medicamentos isentos de prescrição (MIP)","Controle de qualidade e conservação no ponto de dispensação","Rotulagem e bula como instrumentos de informação","Substituição genérico x referência: condições legais","Vantagens dos genéricos para o acesso e a economia em saúde"]},"2026-07-23":{"area":"Língua Portuguesa","tema":"Concordância nominal e verbal","dificuldade":"Médio","tempo":"3h30","subtopicos":["Regras gerais de concordância verbal","Regras gerais de concordância nominal","Casos especiais cobrados em concursos"],"tipo":"estudo","topicos":["Concordância nominal: regra geral (adjetivo com o substantivo)","Concordância de um adjetivo com vários substantivos","Concordância de vários adjetivos com um substantivo","Casos especiais: anexo, obrigado, mesmo, próprio, meio, bastante","Expressões 'é proibido', 'é necessário', 'é bom'","Concordância verbal: regra geral (verbo com o sujeito)","Sujeito composto: posição e concordância","Sujeito coletivo, partitivo e expressões de quantidade","Concordância com 'que' e com 'quem'","Verbos impessoais (haver, fazer, ser) e a oração sem sujeito","Concordância com 'se' (partícula apassivadora x índice de indeterminação)","Silepse (concordância ideológica) de gênero, número e pessoa"]},"2026-07-24":{"area":"Conhecimentos Específicos","tema":"Aquisição de medicamentos: licitações e pregão eletrônico","dificuldade":"Médio","tempo":"3h30","subtopicos":["Modalidades de aquisição no setor público (Lei 14.133/2021)","Pregão eletrônico e CATMAT","Papel do farmacêutico como fiscal técnico do contrato"],"tipo":"estudo","topicos":["Aquisição como etapa do ciclo da AF e seus princípios","Lei 14.133/2021: princípios das licitações e contratos","Modalidades de licitação na nova lei (pregão, concorrência, etc.)","Pregão eletrônico como modalidade preferencial para bens comuns","Critérios de julgamento (menor preço, maior desconto)","Fases do procedimento licitatório (planejamento, seleção, contratação)","Termo de Referência e pesquisa de preços","CATMAT: catalogação de materiais e medicamentos","Ata de Registro de Preços e Sistema de Registro de Preços (SRP)","Aquisição de medicamentos por dispensa e inexigibilidade","Papel do farmacêutico como fiscal técnico do contrato","Recebimento, conferência e atesto da entrega"]},"2026-07-25":{"area":"Noções de Informática","tema":"Planilhas eletrônicas (Excel)","dificuldade":"Médio","tempo":"3h30","subtopicos":["Células, linhas, colunas e estrutura básica","Fórmulas, funções e macros","Gráficos, impressão e classificação de dados externos"],"tipo":"estudo","topicos":["Estrutura: pastas de trabalho, planilhas, células, linhas e colunas","Referências de células: relativa, absoluta ($) e mista","Operadores e construção de fórmulas básicas","Funções matemáticas: SOMA, MÉDIA, MÁXIMO, MÍNIMO, CONT.SE","Funções lógicas: SE, E, OU, SES","Funções de procura: PROCV/PROCH e índices","Funções de texto e de data/hora (noções)","Formatação de células e formatação condicional","Classificação e filtros de dados","Elaboração de tabelas e tabelas dinâmicas (noções)","Criação e edição de gráficos","Impressão, quebras de página e obtenção de dados externos"]},"2026-07-27":{"area":"Conhecimentos Específicos","tema":"Legislação farmacêutica: Lei nº 5.991/1973","dificuldade":"Médio","tempo":"3h30","subtopicos":["Controle sanitário do comércio de drogas e medicamentos","Responsabilidade técnica e funcionamento de farmácias","Principais definições da lei (farmácia, drogaria, dispensação)"],"tipo":"estudo","topicos":["Objeto: controle sanitário do comércio de drogas e medicamentos","Definições legais: droga, medicamento, insumo, correlato, farmácia, drogaria","Diferença entre farmácia, drogaria, dispensário e posto de medicamentos","Exigência de responsabilidade técnica farmacêutica","Licenciamento e funcionamento dos estabelecimentos","Dispensação e a obrigatoriedade de assistência do farmacêutico","Receituário: condições para aviamento e retenção","Comércio de medicamentos: o que pode ser vendido em cada estabelecimento","Aviamento de fórmulas e manipulação (noções)","Fiscalização sanitária e infrações","Lei 13.021/2014: farmácia como estabelecimento de assistência à saúde","Atribuições e presença obrigatória do farmacêutico (Lei 13.021)"]},"2026-07-28":{"area":"História de Campina Grande/PB","tema":"Campina Grande contemporânea: cultura, tecnologia e símbolos","dificuldade":"Fácil","tempo":"3h","subtopicos":["'Maior São João do Mundo' e calendário de festejos","Polo tecnológico, UFCG e Parque Tecnológico da Paraíba (PaqTcPB)","Padroeira (Nossa Senhora da Conceição) e Diocese de Campina Grande (1949)"],"tipo":"estudo","topicos":["'O Maior São João do Mundo' e o Parque do Povo","Calendário cultural: Festival de Inverno e Encontro para a Nova Consciência","Campina Grande como polo tecnológico ('Vale do Silício brasileiro')","UFCG e o Parque Tecnológico da Paraíba (PaqTcPB)","Destaque em ciência: alta proporção de doutores e pesquisa em algodão colorido","Economia atual: comércio, indústria, serviços e TI","Criação da Diocese de Campina Grande (1949)","Catedral de Nossa Senhora da Conceição como marco histórico","Principais bairros, praças e logradouros históricos","Localização: Agreste/Borborema, distância de João Pessoa (~133 km)","Símbolos oficiais do município (brasão, bandeira, hino)","Personalidades e títulos históricos da cidade"]},"2026-07-29":{"area":"Conhecimentos Específicos","tema":"Farmacologia clínica","dificuldade":"Médio","tempo":"3h30","subtopicos":["Princípios de farmacologia clínica aplicada","Monitorização terapêutica e individualização posológica","Populações especiais (idosos, gestantes, hepatopatas/nefropatas)"],"tipo":"estudo","topicos":["Objeto da farmacologia clínica e relação risco-benefício","Aplicação integrada de farmacocinética e farmacodinâmica no paciente","Individualização posológica e ajuste de dose","Monitorização terapêutica de fármacos (TDM) — exemplos clássicos","Janela/índice terapêutico e fármacos de baixa margem de segurança","Farmacologia no idoso: alterações de ADME e polifarmácia","Farmacologia na gestação e lactação (categorias de risco)","Ajuste em insuficiência renal (clearance de creatinina)","Ajuste em insuficiência hepática","Farmacogenética e variabilidade individual de resposta","Reações adversas a medicamentos (RAM): tipos A e B","Adesão ao tratamento e fatores que a influenciam"]},"2026-07-30":{"area":"Língua Portuguesa","tema":"Regência nominal e verbal; pronomes","dificuldade":"Difícil","tempo":"4h","subtopicos":["Regência verbal e nominal mais cobradas","Emprego e colocação pronominal","Formas de tratamento"],"tipo":"estudo","topicos":["Conceito de regência (relação de dependência entre termos)","Regência verbal: verbos transitivos diretos e indiretos","Verbos com regências distintas conforme o sentido (assistir, visar, aspirar)","Regência dos verbos chamar, implicar, esquecer, lembrar, preferir","Regência nominal: nomes que exigem preposição","Uso da crase: regra geral e casos facultativos/proibidos","Crase em locuções e antes de pronomes","Colocação pronominal: próclise, mesóclise e ênclise","Fatores de próclise (palavras atrativas)","Pronomes pessoais oblíquos: o, a, lhe, se","Pronomes de tratamento e concordância","Emprego de pronomes relativos (que, cujo, onde, o qual)"]},"2026-07-31":{"area":"Conhecimentos Específicos","tema":"Vigilância sanitária","dificuldade":"Médio","tempo":"3h30","subtopicos":["Conceito e atuação da vigilância sanitária","Fiscalização de farmácias e drogarias","Relação com a ANVISA e órgãos estaduais/municipais"],"tipo":"estudo","topicos":["Conceito de vigilância sanitária (Lei 8.080/90, art. 6º, §1º)","Campo de atuação: produtos, serviços e ambientes de interesse à saúde","Sistema Nacional de Vigilância Sanitária (SNVS)","ANVISA: criação (Lei 9.782/1999), natureza e competências","Atuação das VISAs estaduais e municipais","Poder de polícia administrativa e ações fiscalizatórias","Licenciamento e Alvará Sanitário de estabelecimentos","Inspeção sanitária em farmácias e drogarias","Infrações sanitárias e penalidades (Lei 6.437/1977)","Registro de medicamentos e controle pós-comercialização","Boas práticas (fabricação, distribuição, armazenamento, dispensação)","Vigilância sanitária e o uso racional/seguro de medicamentos"]},"2026-08-01":{"area":"Legislação e Ética no Serviço Público","tema":"LGPD — Lei nº 13.709/2018","dificuldade":"Médio","tempo":"3h30","subtopicos":["Conceitos fundamentais: dado pessoal, tratamento, titular","Princípios e bases legais para tratamento de dados","Aplicação da LGPD ao setor público de saúde"],"tipo":"estudo","topicos":["Objetivo e fundamentos da LGPD","Conceitos: dado pessoal, dado sensível e dado anonimizado","Agentes de tratamento: controlador, operador e encarregado (DPO)","Titular dos dados e seus direitos","Princípios do tratamento (finalidade, necessidade, transparência)","Bases legais para o tratamento de dados pessoais","Tratamento de dados sensíveis e dados de saúde","Tratamento de dados pela Administração Pública","Segurança, incidentes e comunicação de vazamentos","ANPD — Autoridade Nacional de Proteção de Dados","Sanções administrativas por descumprimento","Aplicação da LGPD na rotina de farmácia/saúde pública"]},"2026-08-03":{"area":"Conhecimentos Específicos","tema":"Farmácia hospitalar","dificuldade":"Médio","tempo":"3h30","subtopicos":["Estrutura, organização e funções da farmácia hospitalar","Sistemas de distribuição de medicamentos (dose unitária etc.)","Integração com a Comissão de Farmácia e Terapêutica"],"tipo":"estudo","topicos":["Conceito, missão e objetivos da farmácia hospitalar","Estrutura física e organizacional do serviço","Seleção e padronização de medicamentos no hospital (CFT)","Sistemas de distribuição: coletivo, individualizado e dose unitária","Vantagens da dose unitária na segurança do paciente","Farmácia clínica e o farmacêutico na equipe multiprofissional","Manipulação hospitalar e preparo de estéreis","Mistura intravenosa e central de misturas IV","Suporte à terapia nutricional parenteral","Farmacotécnica de quimioterápicos antineoplásicos","Gestão de estoque, controlados e cadeia de frio no hospital","Indicadores e segurança no uso de medicamentos hospitalares"]},"2026-08-04":{"area":"Conhecimentos Específicos","tema":"Suporte nutricional parenteral","dificuldade":"Difícil","tempo":"4h","subtopicos":["Indicações da nutrição parenteral","Composição e compatibilidade das soluções","Cuidados na preparação e administração"],"tipo":"estudo","topicos":["Conceito de Nutrição Parenteral (NP) e indicações","Diferença entre nutrição enteral e parenteral","Composição: macronutrientes (glicose, aminoácidos, lipídios)","Composição: eletrólitos, vitaminas e oligoelementos","Vias de administração: central x periférica","Osmolaridade e sua relação com a via de acesso","Estabilidade e compatibilidade da mistura (bolsas 2 e 3 em 1)","Boas práticas de preparo em ambiente estéril (capela de fluxo laminar)","Portaria SVS/MS 272/1998 (boas práticas de NP)","Papel do farmacêutico na Equipe Multiprofissional de Terapia Nutricional (EMTN)","Complicações: metabólicas, infecciosas e mecânicas","Controle de qualidade e rotulagem da NP"]},"2026-08-05":{"area":"Conhecimentos Específicos","tema":"Controle de infecção hospitalar e biossegurança","dificuldade":"Médio","tempo":"3h30","subtopicos":["Programa de Controle de Infecção Hospitalar (PCIH)","Precauções padrão e específicas","Biossegurança aplicada à farmácia e manipulação"],"tipo":"estudo","topicos":["Infecção Relacionada à Assistência à Saúde (IRAS): conceito","Comissão de Controle de Infecção Hospitalar (CCIH) — Lei 9.431/1997","Programa de Controle de Infecção Hospitalar (PCIH)","Higienização das mãos: os 5 momentos (OMS)","Precauções padrão e precauções baseadas na transmissão","Uso racional de antimicrobianos e a stewardship","Limpeza, desinfecção e esterilização de artigos","Classificação de artigos: críticos, semicríticos e não-críticos (Spaulding)","Biossegurança: conceito e níveis de contenção","NR-32: segurança e saúde no trabalho em serviços de saúde","Equipamentos de Proteção Individual (EPI) e coletiva (EPC)","Gerenciamento de resíduos perfurocortantes e infectantes"]},"2026-08-06":{"tipo":"simulado","area":"Simulado Geral","tema":"Simulado 3 — Farmacologia, farmácia hospitalar e vigilância","dificuldade":"Simulado","tempo":"4h","subtopicos":["Misture questões de farmacologia (farmacocinética/farmacodinâmica) com farmácia hospitalar","Treine também 4 questões de Língua Portuguesa e 2 de Informática","Identifique os 3 temas com mais erros para revisar na próxima semana"]},"2026-08-07":{"area":"Conhecimentos Específicos","tema":"Microbiologia aplicada à farmácia","dificuldade":"Difícil","tempo":"4h","subtopicos":["Principais grupos de microrganismos de interesse clínico","Mecanismos de resistência microbiana","Antissepsia, desinfecção e esterilização"],"tipo":"estudo","topicos":["Classificação dos microrganismos de interesse clínico","Bactérias: morfologia, Gram-positivas x Gram-negativas","Fungos, vírus e parasitas de relevância em saúde","Microbiota normal e microrganismos patogênicos x oportunistas","Mecanismos de ação dos principais antimicrobianos","Mecanismos de resistência bacteriana","Resistência microbiana como problema de saúde pública","Antibiograma e teste de sensibilidade","Controle microbiológico de produtos farmacêuticos","Antissepsia, desinfecção e esterilização (conceitos)","Métodos de esterilização (calor, químicos, radiação)","Indicadores de esterilização e validação do processo"]},"2026-08-08":{"area":"Língua Portuguesa","tema":"Flexão nominal e verbal","dificuldade":"Médio","tempo":"3h30","subtopicos":["Flexão de gênero, número e grau (nominal)","Flexão verbal: pessoa, número, modo e tempo","Revisão de casos irregulares mais cobrados"],"tipo":"estudo","topicos":["Flexão de gênero do substantivo e do adjetivo","Flexão de número: regras de plural de simples e compostos","Flexão de grau: aumentativo, diminutivo e grau do adjetivo","Substantivos uniformes (epicenos, comuns de dois, sobrecomuns)","Plural dos adjetivos compostos e de cores","Flexão verbal: número, pessoa, tempo, modo e voz","Tempos do indicativo e seus empregos","Tempos do subjuntivo e do imperativo","Formas nominais: infinitivo, gerúndio e particípio","Verbos regulares, irregulares, defectivos e abundantes","Conjugação de verbos irregulares mais cobrados (pôr, ver, vir, ter)","Correlação entre tempos e modos verbais na frase"]},"2026-08-10":{"area":"Conhecimentos Específicos","tema":"Bioquímica aplicada à farmácia","dificuldade":"Difícil","tempo":"4h","subtopicos":["Macromoléculas biológicas (proteínas, carboidratos, lipídios)","Enzimas e metabolismo básico","Relação da bioquímica com ação e metabolismo de fármacos"],"tipo":"estudo","topicos":["Água, pH, tampões e equilíbrio ácido-base","Carboidratos: estrutura e funções","Lipídios: classificação e funções biológicas","Proteínas: estrutura (1ª a 4ª) e funções","Aminoácidos e ligação peptídica","Enzimas: mecanismo de ação, cinética e inibição","Vitaminas e coenzimas; minerais essenciais","Metabolismo de carboidratos (glicólise, gliconeogênese)","Metabolismo de lipídios e de proteínas (noções)","Bioenergética: ATP e cadeia respiratória","Ácidos nucleicos: DNA, RNA e síntese proteica","Relação da bioquímica com a ação e o metabolismo de fármacos"]},"2026-08-11":{"area":"Noções de Informática","tema":"Internet, navegadores, e-mail e reuniões on-line","dificuldade":"Fácil","tempo":"3h","subtopicos":["Internet, intranet e extranet; protocolos e serviços","Navegadores (Firefox, Chrome) e correio eletrônico","Teams, Google Meet, Zoom e ferramentas de colaboração"],"tipo":"estudo","topicos":["Internet, intranet e extranet: conceitos e diferenças","Protocolos e serviços (HTTP/HTTPS, FTP, DNS, TCP/IP)","Conceitos de URL, links, sites e domínios","Navegadores: Mozilla Firefox e Google Chrome","Navegação: abas, histórico, favoritos e modo anônimo","Sítios de busca e estratégias de pesquisa","Computação em nuvem: conceitos e exemplos","Redes sociais e suas características","Correio eletrônico: estrutura de um endereço e do serviço","Preparo e envio de mensagens; anexação de arquivos","Campos de e-mail (para, cc, cco) e netiqueta","Ferramentas de reunião on-line: Teams, Meet, Zoom, Skype"]},"2026-08-12":{"area":"Conhecimentos Específicos","tema":"Farmacocinética avançada: bioequivalência e biodisponibilidade","dificuldade":"Difícil","tempo":"4h","subtopicos":["Conceitos de biodisponibilidade e bioequivalência","Estudos de bioequivalência para genéricos","Implicações clínicas das diferenças de biodisponibilidade"],"tipo":"estudo","topicos":["Biodisponibilidade: conceito (extensão e velocidade)","Biodisponibilidade absoluta x relativa","Parâmetros: ASC (AUC), Cmáx e Tmáx","Fatores que afetam a biodisponibilidade","Equivalência farmacêutica x equivalência terapêutica","Bioequivalência: conceito e exigência para genéricos","Desenho dos estudos de bioequivalência (cruzado, crossover)","Critérios estatísticos de aceitação (intervalo 80–125%)","Relação entre bioequivalência e intercambialidade","Curvas de concentração plasmática x tempo","Estado de equilíbrio (steady state) e acúmulo","Implicações clínicas das diferenças de biodisponibilidade"]},"2026-08-13":{"area":"Legislação e Ética no Serviço Público","tema":"Lei de Acesso à Informação — Lei nº 12.527/2011","dificuldade":"Médio","tempo":"3h30","subtopicos":["Princípio do acesso como regra e do sigilo como exc.","Prazos, recursos e Serviço de Informação ao Cidadão (SIC)","Informações classificadas e hipóteses de restrição"],"tipo":"estudo","topicos":["Objeto da LAI e o princípio do acesso como regra","Sigilo como exceção e a publicidade como preceito geral","Abrangência: órgãos e entidades obrigados","Transparência ativa x transparência passiva","Serviço de Informação ao Cidadão (SIC)","Procedimento de pedido de informação e prazos de resposta","Recursos em caso de negativa de acesso","Informações pessoais e sua proteção","Classificação da informação: ultrassecreta, secreta, reservada","Prazos de sigilo e desclassificação","Responsabilidades e condutas ilícitas dos agentes","Relação da LAI com o controle social e a cidadania"]},"2026-08-14":{"area":"Conhecimentos Específicos","tema":"Farmacotécnica: formas sólidas, líquidas e semissólidas","dificuldade":"Médio","tempo":"3h30","subtopicos":["Formas farmacêuticas sólidas (comprimidos, cápsulas)","Formas líquidas (xaropes, suspensões, soluções)","Formas semissólidas (pomadas, géis, cremes)"],"tipo":"estudo","topicos":["Conceitos de farmacotécnica e operações farmacêuticas básicas","Pós e granulados: preparo e características","Comprimidos: tipos, etapas de fabricação e controle","Cápsulas duras e moles: preparo e controle","Drágeas e revestimentos (entérico, de liberação modificada)","Soluções: conceito, solubilidade e veículos","Xaropes, elixires e tinturas","Suspensões e emulsões: estabilidade e agentes","Pomadas, cremes e géis: bases e diferenças","Supositórios e óvulos","Controle de qualidade das formas farmacêuticas (Farmacopeia Brasileira)","Boas Práticas de Manipulação (RDC ANVISA 67/2007)"]},"2026-08-15":{"area":"Língua Portuguesa","tema":"Ortografia oficial e acentuação gráfica","dificuldade":"Fácil","tempo":"3h","subtopicos":["Regras de ortografia oficial vigente","Regras de acentuação gráfica","Erros frequentes em provas de concurso"],"tipo":"estudo","topicos":["Emprego de letras: s/z, g/j, x/ch, s/ss/ç/sc","Emprego de h e de e/i, o/u em sílaba átona","Uso de maiúsculas e minúsculas","Regras do Novo Acordo Ortográfico (hífen)","Acentuação: oxítonas, paroxítonas e proparoxítonas","Acento nos hiatos e ditongos abertos","Acento diferencial remanescente (pôde, pôr, têm/vêm)","Trema: abolição pelo Acordo Ortográfico","Emprego do porquê (por que, porque, por quê, porquê)","Mau x mal; mas x mais; a fim x afim","Onde x aonde; senão x se não; demais x de mais","Erros ortográficos frequentes em provas"]},"2026-08-17":{"area":"Conhecimentos Específicos","tema":"Código de Ética da profissão farmacêutica","dificuldade":"Fácil","tempo":"3h","subtopicos":["Princípios fundamentais do Código de Ética Farmacêutica (CFF)","Deveres do farmacêutico e relação com o paciente","Infrações éticas e processos disciplinares"],"tipo":"estudo","topicos":["Código de Ética Farmacêutica (Resolução CFF 711/2021)","Princípios fundamentais da profissão farmacêutica","Direitos do farmacêutico no exercício profissional","Deveres do farmacêutico perante o usuário e a sociedade","Sigilo profissional: alcance e exceções","Relação do farmacêutico com a equipe de saúde","Vedações e proibições éticas","Responsabilidade técnica e suas implicações","Publicidade e propaganda: limites éticos","Infrações éticas e gradação das penalidades","Processo ético-disciplinar nos Conselhos (CRF/CFF)","Estrutura e competências do sistema CFF/CRFs"]},"2026-08-18":{"area":"Noções de Informática","tema":"Segurança da informação e backup","dificuldade":"Médio","tempo":"3h30","subtopicos":["Princípios de segurança, confidencialidade e assinatura digital","Procedimentos de backup e recuperação","Malwares, antivírus e firewalls"],"tipo":"estudo","topicos":["Pilares da segurança: confidencialidade, integridade e disponibilidade","Autenticidade, não-repúdio e assinatura digital","Criptografia: conceito e tipos (simétrica e assimétrica)","Certificado digital e ICP-Brasil (noções)","Senhas seguras e autenticação em duas etapas","Procedimentos e políticas de backup","Tipos de backup: completo, incremental e diferencial","Armazenamento de backups e a regra 3-2-1","Malwares: vírus, worm, trojan, ransomware, spyware","Ataques: phishing, engenharia social, força bruta","Ferramentas de proteção: antivírus e firewall","Boas práticas de segurança do usuário"]},"2026-08-19":{"area":"Conhecimentos Específicos","tema":"Política Nacional de Atenção Básica, Humanização e Redes de Atenção","dificuldade":"Médio","tempo":"3h30","subtopicos":["Política Nacional de Atenção Básica (PNAB)","Política Nacional de Humanização (PNH/HumanizaSUS)","Redes de Atenção à Saúde (RAS)"],"tipo":"estudo","topicos":["Política Nacional de Atenção Básica (PNAB) — Portaria 2.436/2017","Atributos da APS: porta de entrada, longitudinalidade, coordenação","Estratégia Saúde da Família (ESF) e equipes multiprofissionais","NASF/eMulti e o apoio matricial","Farmacêutico na Atenção Básica e o cuidado farmacêutico","Política Nacional de Humanização (PNH/HumanizaSUS)","Diretrizes e dispositivos da PNH (acolhimento, clínica ampliada)","Acolhimento com classificação de risco","Redes de Atenção à Saúde (RAS): conceito e Portaria 4.279/2010","Elementos das RAS: população, estrutura operacional, modelo de atenção","Pontos de atenção e a APS como centro coordenador","Redes temáticas prioritárias (Cegonha, Urgência, Psicossocial)"]},"2026-08-20":{"area":"Conhecimentos Específicos","tema":"Vigilância em saúde, notificação compulsória e imunização","dificuldade":"Médio","tempo":"3h30","subtopicos":["Vigilância epidemiológica, sanitária e ambiental","Doenças e agravos de notificação compulsória","Calendário e princípios da imunização"],"tipo":"estudo","topicos":["Conceito e componentes da vigilância em saúde","Vigilância epidemiológica: objetivos e atribuições","Vigilância sanitária e ambiental: campos de atuação","Vigilância em saúde do trabalhador","Sistema de Informação de Agravos de Notificação (SINAN)","Notificação compulsória: conceito e responsabilidade","Lista Nacional de Notificação Compulsória (Portaria de consolidação)","Notificação imediata x semanal; surto e epidemia","Programa Nacional de Imunizações (PNI)","Calendário Nacional de Vacinação","Cadeia de frio de imunobiológicos e conservação","Eventos adversos pós-vacinação (EAPV) e farmacovigilância"]},"2026-08-21":{"area":"Conhecimentos Específicos","tema":"Segurança do paciente, resíduos e trabalho multiprofissional","dificuldade":"Fácil","tempo":"3h","subtopicos":["Protocolos de segurança do paciente","Gerenciamento de resíduos de serviços de saúde (RDC 222)","Ética, bioética, humanização e intersetorialidade"],"tipo":"estudo","topicos":["Programa Nacional de Segurança do Paciente (PNSP) — Portaria 529/2013","Núcleo de Segurança do Paciente (NSP) — RDC 36/2013","Metas internacionais de segurança do paciente (OMS)","Segurança na prescrição, dispensação e administração de medicamentos","Medicamentos potencialmente perigosos / alta vigilância","Notificação de incidentes e cultura de segurança","Gerenciamento de Resíduos de Serviços de Saúde (RDC ANVISA 222/2018)","Classificação dos RSS: grupos A, B, C, D e E","Plano de Gerenciamento de Resíduos (PGRSS)","Descarte de medicamentos e a logística reversa","Trabalho em equipe multiprofissional e interprofissionalidade","Ética, bioética, humanização e intersetorialidade no cuidado"]},"2026-08-22":{"tipo":"simulado","area":"Simulado Geral","tema":"Simulado 4 — Prova completa (cobertura total do edital)","dificuldade":"Simulado","tempo":"4h","subtopicos":["Monte uma prova de 40 questões nas proporções do edital (10 LP, 5 Informática, 3 História de CG, 3 Legislação/Ética, 20 Específicas)","Cronometre exatamente 3h, como no dia da prova","Faça a correção e calcule sua nota (mínimo 50% + mínimos por disciplina)"]},"2026-08-24":{"tipo":"revisao","area":"Revisão Final","tema":"Revisão geral — Conhecimentos Específicos (Farmacologia e SUS)","dificuldade":"Revisão","tempo":"3h","subtopicos":["Releia seus resumos de farmacocinética, farmacodinâmica e interações","Releia Lei 8.080/1990, Lei 8.142/1990 e Decreto 7.508/2011","Refaça as questões que errou nos simulados sobre esses temas"]},"2026-08-25":{"tipo":"revisao","area":"Revisão Final","tema":"Revisão geral — Ciclo da assistência farmacêutica e legislação específica","dificuldade":"Revisão","tempo":"3h","subtopicos":["Releia Lei 5.991/1973 e Portaria SVS/MS nº 344/1998","Revise RENAME, PCDT, PNM e PNAF","Refaça as questões erradas relacionadas a esses temas"]},"2026-08-26":{"tipo":"revisao","area":"Revisão Final","tema":"Revisão geral — Língua Portuguesa e Informática","dificuldade":"Revisão","tempo":"3h","subtopicos":["Revise regência, concordância e sintaxe (seus pontos fracos)","Revise fórmulas de Excel e conceitos de segurança da informação","Pratique 10 questões de cada disciplina"]},"2026-08-27":{"tipo":"revisao","area":"Revisão Final","tema":"Revisão geral — História de Campina Grande e Legislação/Ética","dificuldade":"Revisão","tempo":"3h","subtopicos":["Revise as datas e fatos-chave da história de Campina Grande","Revise LGPD, Lei de Acesso à Informação e princípios éticos (LIMPE)","Pratique questões de cada um desses temas"]},"2026-08-28":{"tipo":"simulado","area":"Simulado Geral","tema":"Simulado Final — Última prova completa antes do concurso","dificuldade":"Simulado","tempo":"4h","subtopicos":["Última simulação completa nas proporções do edital","Trate como o dia real: ambiente silencioso, sem pausas, 3h cronometradas","Faça uma correção objetiva, sem se aprofundar — é só para calibrar a confiança"]},"2026-08-29":{"tipo":"revisao","area":"Véspera da Prova","tema":"Revisão leve e descanso ativo (véspera)","dificuldade":"Revisão","tempo":"2h","subtopicos":["Releia apenas seus resumos e mapas mentais — nada de conteúdo novo","Confira local de prova, documento de identificação e horário","Durma bem: o descanso na véspera rende mais do que estudar até tarde"]},"2026-06-21":{"tipo":"descanso","area":"Descanso","tema":"Domingo livre / leitura leve opcional","dificuldade":"-","tempo":"-","subtopicos":[]},"2026-06-28":{"tipo":"descanso","area":"Descanso","tema":"Domingo livre / leitura leve opcional","dificuldade":"-","tempo":"-","subtopicos":[]},"2026-07-05":{"tipo":"descanso","area":"Descanso","tema":"Domingo livre / leitura leve opcional","dificuldade":"-","tempo":"-","subtopicos":[]},"2026-07-12":{"tipo":"descanso","area":"Descanso","tema":"Domingo livre / leitura leve opcional","dificuldade":"-","tempo":"-","subtopicos":[]},"2026-07-19":{"tipo":"descanso","area":"Descanso","tema":"Domingo livre / leitura leve opcional","dificuldade":"-","tempo":"-","subtopicos":[]},"2026-07-26":{"tipo":"descanso","area":"Descanso","tema":"Domingo livre / leitura leve opcional","dificuldade":"-","tempo":"-","subtopicos":[]},"2026-08-02":{"tipo":"descanso","area":"Descanso","tema":"Domingo livre / leitura leve opcional","dificuldade":"-","tempo":"-","subtopicos":[]},"2026-08-09":{"tipo":"descanso","area":"Descanso","tema":"Domingo livre / leitura leve opcional","dificuldade":"-","tempo":"-","subtopicos":[]},"2026-08-16":{"tipo":"descanso","area":"Descanso","tema":"Domingo livre / leitura leve opcional","dificuldade":"-","tempo":"-","subtopicos":[]},"2026-08-23":{"tipo":"descanso","area":"Descanso","tema":"Domingo livre / leitura leve opcional","dificuldade":"-","tempo":"-","subtopicos":[]},"2026-08-30":{"tipo":"prova","area":"Dia da Prova","tema":"Prova Objetiva — Concurso Campina Grande/PB (Edital 01/2026)","dificuldade":"-","tempo":"3h","subtopicos":["Chegue com antecedência ao local de prova","Leve documento de identificação com foto e caneta esferográfica azul/preta","Confie na sua preparação"]}};
+const EXAM_DATE_KEY = "2026-08-30";
+const STUDY_DAY_TYPES = new Set(["estudo","revisao","simulado"]);
+const MONTHS = [
+  {y:2026,m:6,label:"Junho 2026"},
+  {y:2026,m:7,label:"Julho 2026"},
+  {y:2026,m:8,label:"Agosto 2026"}
+];
+const AREA_ORDER = [
+  "Conhecimentos Específicos",
+  "Língua Portuguesa",
+  "Noções de Informática",
+  "História de Campina Grande/PB",
+  "Legislação e Ética no Serviço Público",
+  "Revisão & Simulados"
+];
+const MODEL = "claude-sonnet-4-6";
+const API_URL = "https://api.anthropic.com/v1/messages";
+const K_PROGRESS = "fcg2026_progress_v1";
+const K_APIKEY = "fcg2026_apikey_v1";
+
+/* ====================== DATE HELPERS ====================== */
+function parseLocalDate(key){
+  const [y,m,d] = key.split("-").map(Number);
+  return new Date(y, m-1, d);
+}
+function fmtKey(date){
+  const y=date.getFullYear(), m=String(date.getMonth()+1).padStart(2,"0"), d=String(date.getDate()).padStart(2,"0");
+  return `${y}-${m}-${d}`;
+}
+function todayKey(){ return fmtKey(new Date()); }
+function daysBetween(aKey,bKey){
+  const a=parseLocalDate(aKey), b=parseLocalDate(bKey);
+  return Math.round((b-a)/86400000);
+}
+const WEEKDAY_FMT = new Intl.DateTimeFormat("pt-BR",{weekday:"long",day:"2-digit",month:"long",year:"numeric"});
+function longDateLabel(key){
+  const s = WEEKDAY_FMT.format(parseLocalDate(key));
+  return s.charAt(0).toUpperCase()+s.slice(1);
+}
+
+/* ====================== STORAGE ====================== */
+const hasArtifactStorage = (typeof window.storage !== "undefined" && window.storage !== null);
+const Store = {
+  async get(key, fallback=null){
+    try{
+      if(hasArtifactStorage){
+        const r = await window.storage.get(key);
+        return r ? JSON.parse(r.value) : fallback;
+      } else {
+        const v = localStorage.getItem(key);
+        return v!==null ? JSON.parse(v) : fallback;
+      }
+    } catch(e){ return fallback; }
+  },
+  async set(key, value){
+    try{
+      if(hasArtifactStorage){
+        await window.storage.set(key, JSON.stringify(value));
+      } else {
+        localStorage.setItem(key, JSON.stringify(value));
+      }
+    } catch(e){ /* ignore */ }
+  }
+};
+
+/* ====================== STATE ====================== */
+let progress = {};       // dateKey -> {completed, seconds, discursiveAnswer, lastCorrection, questions}
+let apiKey = null;
+let activeMonth = 0;
+let openDateKey = null;
+let timerState = {running:false, dateKey:null, startedAt:null, tickHandle:null};
+let confirmCallback = null;
+
+function getDayState(key){
+  if(!progress[key]) progress[key] = {completed:false, seconds:0, discursiveAnswer:"", lastCorrection:"", discursivePrompt:"", questions:null, quizScore:{correct:0,total:0}, topicsDone:[]};
+  if(!progress[key].topicsDone) progress[key].topicsDone = [];
+  return progress[key];
+}
+async function saveProgress(){ await Store.set(K_PROGRESS, progress); }
+
+/* ====================== INIT ====================== */
+async function init(){
+  progress = await Store.get(K_PROGRESS, {});
+  apiKey = await Store.get(K_APIKEY, null);
+
+  const tk = todayKey();
+  let idx = MONTHS.findIndex(mo => tk.startsWith(`${mo.y}-${String(mo.m).padStart(2,"0")}`));
+  if(idx === -1){
+    const d = parseLocalDate(tk);
+    idx = (d < parseLocalDate("2026-06-19")) ? 0 : 2;
+  }
+  activeMonth = idx;
+
+  renderCountdown();
+  renderMonthTabs();
+  renderCalendar();
+  renderProgress();
+  bindGlobalEvents();
+}
+
+function renderCountdown(){
+  const tk = todayKey();
+  const diff = daysBetween(tk, EXAM_DATE_KEY);
+  const num = document.getElementById("countdownNum");
+  const label = document.querySelector("#countdownStamp .stamp-label");
+  if(diff > 0){ num.textContent = diff; label.textContent = "dias até a prova"; }
+  else if(diff === 0){ num.textContent = "🎯"; label.textContent = "é hoje!"; }
+  else { num.textContent = "✓"; label.textContent = "prova realizada"; }
+}
+
+/* ====================== PROGRESS PANEL ====================== */
+function renderProgress(){
+  const studyKeys = Object.keys(SCHEDULE).filter(k => STUDY_DAY_TYPES.has(SCHEDULE[k].tipo));
+  const total = studyKeys.length;
+  const done = studyKeys.filter(k => progress[k] && progress[k].completed).length;
+  const pct = total ? Math.round((done/total)*100) : 0;
+  let totalSeconds = 0;
+  Object.values(progress).forEach(p => totalSeconds += (p.seconds||0));
+  const totalHours = (totalSeconds/3600);
+
+  document.getElementById("progressHeadline").textContent = `${done} de ${total} dias de estudo concluídos`;
+  document.getElementById("progressSub").textContent = `${pct}% do plano · ${totalHours.toFixed(1)}h estudadas no total (cronômetro)`;
+  document.getElementById("globalBarFill").style.width = pct+"%";
+
+  const areaTotals = {};
+  AREA_ORDER.forEach(a => areaTotals[a] = {done:0,total:0});
+  studyKeys.forEach(k => {
+    const entry = SCHEDULE[k];
+    const area = (entry.tipo === "estudo") ? entry.area : "Revisão & Simulados";
+    if(!areaTotals[area]) areaTotals[area] = {done:0,total:0};
+    areaTotals[area].total++;
+    if(progress[k] && progress[k].completed) areaTotals[area].done++;
+  });
+  const wrap = document.getElementById("areaBars");
+  wrap.innerHTML = "";
+  AREA_ORDER.forEach(area => {
+    const t = areaTotals[area];
+    if(!t || t.total===0) return;
+    const p = Math.round((t.done/t.total)*100);
+    const div = document.createElement("div");
+    div.className = "area-bar-item";
+    div.innerHTML = `<div class="label-row"><span>${area}</span><span>${t.done}/${t.total}</span></div>
+      <div class="area-bar-track"><div class="area-bar-fill" style="width:${p}%"></div></div>`;
+    wrap.appendChild(div);
+  });
+
+  renderMonthTabs();
+}
+
+/* ====================== MONTH TABS ====================== */
+function renderMonthTabs(){
+  const nav = document.getElementById("monthTabs");
+  nav.innerHTML = "";
+  MONTHS.forEach((mo,i) => {
+    const prefix = `${mo.y}-${String(mo.m).padStart(2,"0")}`;
+    const keys = Object.keys(SCHEDULE).filter(k => k.startsWith(prefix) && STUDY_DAY_TYPES.has(SCHEDULE[k].tipo));
+    const done = keys.filter(k => progress[k] && progress[k].completed).length;
+    const btn = document.createElement("button");
+    btn.className = "month-tab" + (i===activeMonth ? " active" : "");
+    btn.innerHTML = `${mo.label} <span class="tab-count">${done}/${keys.length}</span>`;
+    btn.onclick = () => { activeMonth = i; renderMonthTabs(); renderCalendar(); };
+    nav.appendChild(btn);
+  });
+}
+
+/* ====================== CALENDAR ====================== */
+function renderCalendar(){
+  const grid = document.getElementById("calGrid");
+  grid.innerHTML = "";
+  const {y,m} = MONTHS[activeMonth];
+  const firstDow = new Date(y, m-1, 1).getDay();
+  const daysInMonth = new Date(y, m, 0).getDate();
+  const tk = todayKey();
+
+  for(let i=0;i<firstDow;i++){
+    const blank = document.createElement("div");
+    blank.className = "day-cell blank";
+    grid.appendChild(blank);
+  }
+  for(let day=1; day<=daysInMonth; day++){
+    const key = `${y}-${String(m).padStart(2,"0")}-${String(day).padStart(2,"0")}`;
+    const entry = SCHEDULE[key];
+    const cell = document.createElement("button");
+    cell.type = "button";
+
+    if(!entry){
+      cell.className = "day-cell empty";
+      cell.innerHTML = `<span class="day-num">${day}</span>`;
+      cell.disabled = true;
+      grid.appendChild(cell);
+      continue;
+    }
+
+    const isCompleted = !!(progress[key] && progress[key].completed);
+    cell.className = "day-cell" + (key===tk ? " is-today" : "") + (isCompleted ? " is-completed" : "");
+    cell.dataset.tipo = entry.tipo;
+    cell.onclick = () => openDayModal(key);
+
+    let tagHtml = "";
+    if(entry.tipo === "estudo" || entry.tipo === "revisao" || entry.tipo === "simulado"){
+      tagHtml = `<span class="day-tag tag-${entry.dificuldade}">${entry.dificuldade}</span>`;
+    }
+    let bodyHtml = "";
+    if(entry.tipo === "descanso"){
+      bodyHtml = `<span class="day-num">${day}</span><div class="day-tema">Domingo livre</div>`;
+    } else if(entry.tipo === "prova"){
+      bodyHtml = `<span class="day-num">${day}</span><div class="day-tema">🎯 Dia da Prova</div>`;
+    } else {
+      const check = `<span class="day-check">${isCompleted ? "✓" : ""}</span>`;
+      let topicInfo = "";
+      if(entry.topicos && entry.topicos.length){
+        const doneT = (progress[key] && progress[key].topicsDone) ? progress[key].topicsDone.length : 0;
+        if(doneT > 0){
+          topicInfo = `<span class="day-time" style="color:var(--accent);">▦ ${doneT}/${entry.topicos.length}</span>`;
+        }
+      }
+      bodyHtml = `<div style="display:flex;justify-content:space-between;align-items:center;">
+          <span class="day-num">${day}</span>${tagHtml}
+        </div>
+        <div class="day-tema">${entry.tema}</div>
+        <div class="day-foot">${topicInfo || `<span class="day-time">${entry.tempo}</span>`}${check}</div>`;
+    }
+    cell.innerHTML = bodyHtml;
+    grid.appendChild(cell);
+  }
+}
+
+/* ====================== DAY MODAL ====================== */
+function diffMeta(d){
+  const map = {
+    "Fácil":{var:"easy"}, "Médio":{var:"medium"}, "Difícil":{var:"hard"},
+    "Revisão":{var:"review"}, "Simulado":{var:"sim"}
+  };
+  return map[d] || {var:"primary"};
+}
+
+function openDayModal(key){
+  openDateKey = key;
+  const entry = SCHEDULE[key];
+  const st = getDayState(key);
+
+  document.getElementById("dayModalDate").textContent = longDateLabel(key);
+  document.getElementById("dayModalTitle").textContent = entry.tema;
+
+  const badgeRow = document.getElementById("dayModalBadges");
+  badgeRow.innerHTML = "";
+  const areaBadge = document.createElement("span");
+  areaBadge.className = "badge badge-area";
+  areaBadge.textContent = entry.area;
+  badgeRow.appendChild(areaBadge);
+  if(entry.dificuldade && entry.dificuldade !== "-"){
+    const dm = diffMeta(entry.dificuldade);
+    const db = document.createElement("span");
+    db.className = "badge";
+    db.style.background = `var(--${dm.var}-bg, var(--primary-100))`;
+    db.style.color = `var(--${dm.var})`;
+    db.textContent = entry.dificuldade;
+    badgeRow.appendChild(db);
+  }
+  if(entry.tempo && entry.tempo !== "-"){
+    const tb = document.createElement("span");
+    tb.className = "badge";
+    tb.style.background = "var(--line-soft)";
+    tb.style.color = "var(--ink-soft)";
+    tb.textContent = "⏱ "+entry.tempo;
+    badgeRow.appendChild(tb);
+  }
+
+  const body = document.getElementById("dayModalBody");
+  body.innerHTML = "";
+
+  if(entry.tipo === "descanso"){
+    body.innerHTML = `<p style="font-size:13.5px;color:var(--ink-soft);">
+      Domingo é dia de descansar a cabeça. Se quiser, aproveite para uma leitura leve ou para revisar
+      anotações antigas — sem cobrança. O cronômetro e os exercícios voltam amanhã.</p>`;
+  } else if(entry.tipo === "prova"){
+    body.innerHTML = `<ul class="subtopic-list">
+        ${entry.subtopicos.map(s=>`<li>${escapeHtml(s)}</li>`).join("")}
+      </ul>
+      <p style="font-size:13.5px;margin-top:16px;">Boa prova! Depois de tantas semanas de preparo, confie no processo. 🍀</p>`;
+  } else {
+    if(entry.topicos && entry.topicos.length){
+      body.appendChild(buildTopicsSection(key, entry));
+    } else {
+      const subList = document.createElement("ul");
+      subList.className = "subtopic-list";
+      subList.innerHTML = entry.subtopicos.map(s=>`<li>${escapeHtml(s)}</li>`).join("");
+      body.appendChild(subList);
+    }
+
+    body.appendChild(buildCompleteRow(key));
+    body.appendChild(buildTimerSection(key, entry));
+    body.appendChild(buildQuizSection(key, entry));
+    body.appendChild(buildDiscursiveSection(key, entry));
+  }
+
+  document.getElementById("dayModalOverlay").classList.remove("hidden");
+}
+
+function buildTopicsSection(key, entry){
+  const st = getDayState(key);
+  const total = entry.topicos.length;
+  const wrap = document.createElement("div");
+
+  const title = document.createElement("div");
+  title.className = "section-title";
+  title.style.marginTop = "0";
+  title.textContent = "📋 Tópicos principais do dia";
+  wrap.appendChild(title);
+
+  const progress = document.createElement("div");
+  progress.className = "topic-progress";
+  progress.innerHTML = `<div class="tp-track"><div class="tp-fill" id="tpFill"></div></div><span class="tp-label" id="tpLabel"></span>`;
+  wrap.appendChild(progress);
+
+  const ul = document.createElement("ul");
+  ul.className = "topic-list";
+  wrap.appendChild(ul);
+
+  const updateBar = () => {
+    const done = st.topicsDone.length;
+    const pct = total ? Math.round((done/total)*100) : 0;
+    const fill = wrap.querySelector("#tpFill");
+    const label = wrap.querySelector("#tpLabel");
+    if(fill) fill.style.width = pct+"%";
+    if(label) label.textContent = `${done}/${total} tópicos`;
+  };
+
+  entry.topicos.forEach((topic, ti) => {
+    const checked = st.topicsDone.includes(ti);
+    const li = document.createElement("li");
+    li.className = "topic-item" + (checked ? " done" : "");
+    const cb = document.createElement("input");
+    cb.type = "checkbox";
+    cb.checked = checked;
+    const span = document.createElement("span");
+    span.textContent = topic;
+    li.appendChild(cb);
+    li.appendChild(span);
+    li.onclick = (e) => {
+      if(e.target !== cb) cb.checked = !cb.checked;
+      if(cb.checked){
+        if(!st.topicsDone.includes(ti)) st.topicsDone.push(ti);
+        li.classList.add("done");
+      } else {
+        st.topicsDone = st.topicsDone.filter(x => x !== ti);
+        li.classList.remove("done");
+      }
+      saveProgress();
+      updateBar();
+    };
+    ul.appendChild(li);
+  });
+
+  const actions = document.createElement("div");
+  actions.className = "topics-actions";
+  actions.innerHTML = `<button class="btn btn-ghost btn-sm" id="topicsAll">Marcar todos</button><button class="btn btn-ghost btn-sm" id="topicsNone">Limpar</button>`;
+  actions.querySelector("#topicsAll").onclick = () => {
+    st.topicsDone = entry.topicos.map((_,i)=>i);
+    saveProgress();
+    ul.querySelectorAll(".topic-item").forEach(li => { li.classList.add("done"); li.querySelector("input").checked = true; });
+    updateBar();
+  };
+  actions.querySelector("#topicsNone").onclick = () => {
+    st.topicsDone = [];
+    saveProgress();
+    ul.querySelectorAll(".topic-item").forEach(li => { li.classList.remove("done"); li.querySelector("input").checked = false; });
+    updateBar();
+  };
+  wrap.appendChild(actions);
+
+  updateBar();
+  return wrap;
+}
+
+function buildCompleteRow(key){
+  const st = getDayState(key);
+  const row = document.createElement("div");
+  row.className = "complete-row";
+  row.innerHTML = `
+    <label class="complete-toggle">
+      <input type="checkbox" id="completeCheckbox" ${st.completed?"checked":""}>
+      Marcar este dia como concluído
+    </label>
+    <span style="font-size:11.5px;color:var(--ink-faint);">Isso atualiza sua barra de progresso geral</span>`;
+  row.querySelector("#completeCheckbox").onchange = async (e) => {
+    st.completed = e.target.checked;
+    await saveProgress();
+    renderProgress();
+    renderCalendar();
+    showToast(st.completed ? "Dia marcado como concluído ✓" : "Dia desmarcado");
+  };
+  return row;
+}
+
+function buildTimerSection(key, entry){
+  const st = getDayState(key);
+  const wrap = document.createElement("div");
+  wrap.innerHTML = `<div class="section-title">⏱ Cronômetro de estudo</div>`;
+  const box = document.createElement("div");
+  box.className = "timer-box";
+  box.innerHTML = `
+    <div>
+      <div class="timer-display" id="timerDisplay">${formatHMS(st.seconds)}</div>
+      <div class="timer-goal">Meta do dia: ${entry.tempo}</div>
+    </div>
+    <div class="timer-btns">
+      <button class="btn btn-primary" id="timerStartBtn">${timerState.running && timerState.dateKey===key ? "Pausar" : "Iniciar"}</button>
+      <button class="btn" id="timerResetBtn">Zerar</button>
+    </div>`;
+  wrap.appendChild(box);
+
+  box.querySelector("#timerStartBtn").onclick = () => toggleTimer(key);
+  box.querySelector("#timerResetBtn").onclick = () => {
+    openConfirm("Zerar o tempo estudado registrado neste dia?", async () => {
+      if(timerState.running && timerState.dateKey===key){
+        stopTimerInterval();
+        timerState.running = false;
+      }
+      st.seconds = 0;
+      await saveProgress();
+      renderProgress();
+      updateTimerDisplay(0);
+      const startBtn = document.getElementById("timerStartBtn");
+      if(startBtn) startBtn.textContent = "Iniciar";
+    });
+  };
+  return wrap;
+}
+
+function formatHMS(totalSeconds){
+  const s = Math.max(0, Math.floor(totalSeconds));
+  const h = String(Math.floor(s/3600)).padStart(2,"0");
+  const m = String(Math.floor((s%3600)/60)).padStart(2,"0");
+  const sec = String(s%60).padStart(2,"0");
+  return `${h}:${m}:${sec}`;
+}
+
+function toggleTimer(key){
+  if(timerState.running && timerState.dateKey===key){
+    pauseTimer();
+  } else {
+    if(timerState.running) pauseTimer();
+    startTimer(key);
+  }
+  const btn = document.getElementById("timerStartBtn");
+  if(btn) btn.textContent = (timerState.running && timerState.dateKey===key) ? "Pausar" : "Iniciar";
+}
+
+function startTimer(key){
+  timerState.running = true;
+  timerState.dateKey = key;
+  timerState.startedAt = Date.now();
+  timerState.tickHandle = setInterval(() => {
+    const st = getDayState(key);
+    const elapsed = (Date.now() - timerState.startedAt)/1000;
+    updateTimerDisplay(st.seconds + elapsed);
+  }, 1000);
+}
+
+function pauseTimer(){
+  if(!timerState.running) return;
+  const key = timerState.dateKey;
+  const st = getDayState(key);
+  const elapsed = (Date.now() - timerState.startedAt)/1000;
+  st.seconds += elapsed;
+  timerState.running = false;
+  stopTimerInterval();
+  saveProgress();
+  renderProgress();
+  updateTimerDisplay(st.seconds);
+}
+function stopTimerInterval(){
+  if(timerState.tickHandle){ clearInterval(timerState.tickHandle); timerState.tickHandle=null; }
+}
+function updateTimerDisplay(overrideSeconds){
+  const el = document.getElementById("timerDisplay");
+  if(!el) return;
+  let secs = overrideSeconds;
+  if(secs === undefined){
+    const st = getDayState(timerState.dateKey || openDateKey);
+    secs = st.seconds;
+  }
+  el.textContent = formatHMS(secs);
+}
+
+/* ====================== AI: anthropic call ====================== */
+async function anthropicMessages({system, messages, max_tokens=1500, mcp_servers=null, useKey=null}){
+  const body = {model: MODEL, max_tokens, messages};
+  if(system) body.system = system;
+  if(mcp_servers) body.mcp_servers = mcp_servers;
+  const headers = {"Content-Type":"application/json"};
+  if(useKey){
+    headers["x-api-key"] = useKey;
+    headers["anthropic-version"] = "2023-06-01";
+    headers["anthropic-dangerous-direct-browser-access"] = "true";
+  }
+  const res = await fetch(API_URL, {method:"POST", headers, body: JSON.stringify(body)});
+  if(!res.ok){
+    let detail = "";
+    try{ const j = await res.json(); detail = (j.error && j.error.message) || ""; } catch(e){}
+    throw new Error(`HTTP ${res.status}${detail ? ": "+detail : ""}`);
+  }
+  return res.json();
+}
+
+async function callClaudeSmart(opts){
+  try{
+    return await anthropicMessages(opts);
+  } catch(e1){
+    if(apiKey){
+      return await anthropicMessages({...opts, useKey: apiKey});
+    }
+    throw e1;
+  }
+}
+
+function extractText(data){
+  if(!data || !data.content) return "";
+  return data.content.filter(b=>b.type==="text").map(b=>b.text).join("\n").trim();
+}
+
+function aiUnavailableMessage(err){
+  return `Não foi possível usar a IA agora (${err && err.message ? err.message : "erro desconhecido"}). ` +
+    `Se você está usando este arquivo fora do Claude, adicione sua chave de API em "Configurações" (ícone ⚙ no topo).`;
+}
+
+/* ====================== QUIZ ====================== */
+function buildQuizSection(key, entry){
+  const st = getDayState(key);
+  const wrap = document.createElement("div");
+  wrap.innerHTML = `<div class="section-title">📝 Questões estilo IDECAN</div>`;
+
+  const qtyRow = document.createElement("div");
+  qtyRow.className = "qty-row";
+  qtyRow.innerHTML = `
+    <select id="qtySelect">
+      <option value="3">3 questões</option>
+      <option value="5" selected>5 questões</option>
+      <option value="10">10 questões</option>
+    </select>
+    <button class="btn btn-primary btn-sm" id="genQuizBtn">${st.questions ? "Gerar novas questões" : "Gerar questões"}</button>
+  `;
+  wrap.appendChild(qtyRow);
+
+  const status = document.createElement("div");
+  status.id = "quizStatus";
+  wrap.appendChild(status);
+
+  const list = document.createElement("div");
+  list.className = "quiz-list";
+  list.id = "quizList";
+  wrap.appendChild(list);
+
+  if(st.questions && st.questions.length){
+    renderQuizList(list, st.questions, key);
+  }
+
+  qtyRow.querySelector("#genQuizBtn").onclick = () => generateQuestions(key, entry);
+  return wrap;
+}
+
+async function generateQuestions(key, entry){
+  const qty = document.getElementById("qtySelect").value;
+  const status = document.getElementById("quizStatus");
+  const list = document.getElementById("quizList");
+  const btn = document.getElementById("genQuizBtn");
+  btn.disabled = true;
+  status.innerHTML = `<div class="loading-line"><span class="spinner"></span> Gerando ${qty} questões no estilo IDECAN…</div>`;
+  list.innerHTML = "";
+
+  const system = `Você é um elaborador de questões de concursos públicos brasileiros, especialista no estilo da banca IDECAN. Gere questões objetivas de múltipla escolha (4 alternativas A, B, C, D, apenas uma correta), no nível de dificuldade indicado, sobre o tema e os subtemas fornecidos, para o cargo de Farmacêutico do concurso público da Prefeitura Municipal de Campina Grande/PB (Edital nº 01/2026). Use linguagem formal e técnica quando apropriado, seguindo fielmente a legislação brasileira vigente (não invente leis ou números de artigo). Responda ESTRITAMENTE em JSON válido, sem nenhum texto antes ou depois, sem marcação markdown e sem crases, seguindo exatamente este formato: {"questoes":[{"enunciado":"...","alternativas":{"A":"...","B":"...","C":"...","D":"..."},"correta":"A","explicacao":"..."}]}`;
+  const userMsg = `Tema do dia: ${entry.tema}\nÁrea: ${entry.area}\nNível de dificuldade: ${entry.dificuldade}\nSubtemas a explorar:\n- ${entry.subtopicos.join("\n- ")}\n\nGere ${qty} questões inéditas no estilo da banca IDECAN sobre este tema, variando o subtema abordado a cada questão e mantendo o nível de dificuldade indicado.`;
+
+  try{
+    const data = await callClaudeSmart({
+      system, messages:[{role:"user", content:userMsg}], max_tokens: 350*Number(qty)+400
+    });
+    const raw = extractText(data).replace(/^```json/i,"").replace(/^```/,"").replace(/```$/,"").trim();
+    const parsed = JSON.parse(raw);
+    const questions = parsed.questoes || [];
+    if(!questions.length) throw new Error("Resposta vazia");
+    const st = getDayState(key);
+    st.questions = questions;
+    st.quizScore = {correct:0, total:0};
+    await saveProgress();
+    status.innerHTML = "";
+    renderQuizList(list, questions, key);
+    btn.textContent = "Gerar novas questões";
+  } catch(err){
+    status.innerHTML = `<div class="error-line">${escapeHtml(aiUnavailableMessage(err))}</div>`;
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+function renderQuizList(list, questions, key){
+  list.innerHTML = "";
+  const st = getDayState(key);
+  const scoreEl = document.createElement("div");
+  scoreEl.className = "quiz-score";
+  scoreEl.id = "quizScoreLine";
+  const updateScore = () => { scoreEl.textContent = `Acertos: ${st.quizScore.correct}/${st.quizScore.total} respondidas (de ${questions.length})`; };
+
+  questions.forEach((q, qi) => {
+    const item = document.createElement("div");
+    item.className = "quiz-item";
+    const stem = document.createElement("div");
+    stem.className = "quiz-stem";
+    stem.textContent = `${qi+1}. ${q.enunciado}`;
+    item.appendChild(stem);
+
+    const explain = document.createElement("div");
+    explain.className = "quiz-explain";
+    explain.textContent = q.explicacao || "";
+
+    ["A","B","C","D"].forEach(letter => {
+      if(!q.alternativas || !(letter in q.alternativas)) return;
+      const optBtn = document.createElement("button");
+      optBtn.type = "button";
+      optBtn.className = "quiz-opt";
+      optBtn.textContent = `${letter}) ${q.alternativas[letter]}`;
+      optBtn.onclick = () => {
+        if(optBtn.dataset.answered) return;
+        const allOpts = item.querySelectorAll(".quiz-opt");
+        allOpts.forEach(o => o.dataset.answered = "1");
+        allOpts.forEach(o => { o.disabled = true; });
+        const isCorrect = (letter === q.correta);
+        optBtn.classList.add(isCorrect ? "correct" : "incorrect");
+        if(!isCorrect){
+          allOpts.forEach(o => { if(o.textContent.startsWith(q.correta+")")) o.classList.add("correct"); });
+        }
+        explain.classList.add("show");
+        st.quizScore.total++;
+        if(isCorrect) st.quizScore.correct++;
+        saveProgress();
+        updateScore();
+      };
+      item.appendChild(optBtn);
+    });
+    item.appendChild(explain);
+    list.appendChild(item);
+  });
+  list.appendChild(scoreEl);
+  updateScore();
+}
+
+/* ====================== DISCURSIVE ====================== */
+function defaultDiscursivePrompt(entry){
+  return `Discorra, de forma técnica e fundamentada, sobre: "${entry.tema}". Contextualize dentro da prática do farmacêutico no SUS (quando aplicável) e cite a legislação ou os conceitos técnicos pertinentes.`;
+}
+
+function buildDiscursiveSection(key, entry){
+  const st = getDayState(key);
+  if(!st.discursivePrompt) st.discursivePrompt = defaultDiscursivePrompt(entry);
+
+  const wrap = document.createElement("div");
+  wrap.innerHTML = `<div class="section-title">✍️ Treino discursivo</div>`;
+
+  const promptBox = document.createElement("div");
+  promptBox.className = "discursive-prompt";
+  promptBox.id = "discursivePromptBox";
+  promptBox.textContent = st.discursivePrompt;
+  wrap.appendChild(promptBox);
+
+  const newPromptBtn = document.createElement("button");
+  newPromptBtn.className = "btn btn-ghost btn-sm";
+  newPromptBtn.textContent = "🔁 Gerar outro enunciado";
+  newPromptBtn.style.marginBottom = "10px";
+  newPromptBtn.onclick = () => generateDiscursivePrompt(key, entry, promptBox);
+  wrap.appendChild(newPromptBtn);
+
+  const textarea = document.createElement("textarea");
+  textarea.className = "discursive-input";
+  textarea.placeholder = "Escreva sua resposta discursiva aqui...";
+  textarea.value = st.discursiveAnswer || "";
+  textarea.oninput = () => { st.discursiveAnswer = textarea.value; };
+  textarea.onblur = () => saveProgress();
+  wrap.appendChild(textarea);
+
+  const isClinical = (entry.area === "Conhecimentos Específicos");
+  const consensusRow = document.createElement("div");
+  consensusRow.className = "consensus-row";
+  consensusRow.style.display = isClinical ? "flex" : "none";
+  consensusRow.innerHTML = `<input type="checkbox" id="useConsensus"> <label for="useConsensus">Verificar afirmações clínicas/farmacológicas com literatura científica (Consensus)</label>`;
+  wrap.appendChild(consensusRow);
+
+  const correctBtnRow = document.createElement("div");
+  correctBtnRow.style.marginTop = "10px";
+  correctBtnRow.innerHTML = `<button class="btn btn-primary btn-sm" id="correctBtn">Corrigir com Claude</button>`;
+  wrap.appendChild(correctBtnRow);
+
+  const statusEl = document.createElement("div");
+  statusEl.id = "discursiveStatus";
+  wrap.appendChild(statusEl);
+
+  const correctionBox = document.createElement("div");
+  correctionBox.className = "correction-box";
+  correctionBox.id = "correctionBox";
+  if(st.lastCorrection){
+    correctionBox.innerHTML = simpleFormat(st.lastCorrection);
+  } else {
+    correctionBox.style.display = "none";
+  }
+  wrap.appendChild(correctionBox);
+
+  correctBtnRow.querySelector("#correctBtn").onclick = () => correctDiscursive(key, entry, isClinical && consensusRow.querySelector("#useConsensus").checked);
+
+  return wrap;
+}
+
+async function generateDiscursivePrompt(key, entry, promptBox){
+  const st = getDayState(key);
+  promptBox.textContent = "Gerando novo enunciado…";
+  const system = `Você cria enunciados de questões discursivas para concursos públicos brasileiros na área de Farmácia e Saúde Pública (SUS), no estilo da banca IDECAN. Responda apenas com o enunciado da questão discursiva, em um único parágrafo, sem introduções nem comentários.`;
+  const userMsg = `Tema: ${entry.tema}\nÁrea: ${entry.area}\nSubtemas: ${entry.subtopicos.join("; ")}\n\nCrie um enunciado discursivo inédito sobre este tema.`;
+  try{
+    const data = await callClaudeSmart({system, messages:[{role:"user", content:userMsg}], max_tokens:300});
+    const text = extractText(data) || defaultDiscursivePrompt(entry);
+    st.discursivePrompt = text;
+    promptBox.textContent = text;
+    await saveProgress();
+  } catch(err){
+    promptBox.textContent = st.discursivePrompt || defaultDiscursivePrompt(entry);
+    showToast("Não foi possível gerar um novo enunciado agora.");
+  }
+}
+
+async function correctDiscursive(key, entry, useConsensus){
+  const st = getDayState(key);
+  const status = document.getElementById("discursiveStatus");
+  const box = document.getElementById("correctionBox");
+  if(!st.discursiveAnswer || !st.discursiveAnswer.trim()){
+    status.innerHTML = `<div class="error-line">Escreva sua resposta antes de pedir a correção.</div>`;
+    return;
+  }
+  status.innerHTML = `<div class="loading-line"><span class="spinner"></span> Corrigindo sua resposta${useConsensus ? " (consultando literatura científica)" : ""}…</div>`;
+  box.style.display = "none";
+
+  let system = `Você é um corretor experiente de provas discursivas de concursos públicos brasileiros, especializado em Farmácia, Saúde Pública e legislação do SUS. Avalie a resposta do candidato com rigor técnico e jurídico, mas em tom construtivo e direto. Estruture a devolutiva em português, com estes tópicos, usando **negrito** para os títulos: **Nota estimada** (0 a 10), **Pontos fortes**, **Pontos a melhorar** (técnicos, jurídicos, de clareza/coesão) e **Resposta-modelo resumida**. Seja específico e cite a legislação pertinente quando aplicável. Não invente leis, números de artigo ou dados que não tenha certeza.`;
+  let mcp_servers = null;
+  if(useConsensus){
+    system += ` Use a ferramenta de busca em literatura científica (Consensus) para verificar a precisão de afirmações farmacológicas ou clínicas presentes na resposta do candidato, e cite resumidamente os achados relevantes.`;
+    mcp_servers = [{type:"url", url:"https://mcp.consensus.app/mcp", name:"consensus"}];
+  }
+  const userMsg = `Tema da questão: ${entry.tema}\nÁrea: ${entry.area}\nEnunciado discursivo: ${st.discursivePrompt}\n\nResposta do candidato:\n"""\n${st.discursiveAnswer}\n"""`;
+
+  try{
+    const data = await callClaudeSmart({
+      system, messages:[{role:"user", content:userMsg}], max_tokens:1400, mcp_servers
+    });
+    const text = extractText(data);
+    st.lastCorrection = text;
+    await saveProgress();
+    status.innerHTML = "";
+    box.style.display = "block";
+    box.innerHTML = simpleFormat(text);
+  } catch(err){
+    status.innerHTML = `<div class="error-line">${escapeHtml(aiUnavailableMessage(err))}</div>`;
+  }
+}
+
+/* ====================== UTIL ====================== */
+function escapeHtml(str){
+  return String(str).replace(/[&<>"']/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
+}
+function simpleFormat(text){
+  let safe = escapeHtml(text);
+  safe = safe.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  safe = safe.split(/\n{2,}/).map(p => `<p>${p.replace(/\n/g,"<br>")}</p>`).join("");
+  return safe;
+}
+function showToast(msg){
+  const t = document.getElementById("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  clearTimeout(showToast._h);
+  showToast._h = setTimeout(()=> t.classList.remove("show"), 2400);
+}
+function openConfirm(message, onConfirm){
+  document.getElementById("confirmMessage").textContent = message;
+  confirmCallback = onConfirm;
+  document.getElementById("confirmOverlay").classList.remove("hidden");
+}
+
+/* ====================== MODAL CLOSE / GLOBAL EVENTS ====================== */
+function closeDayModal(){
+  if(timerState.running) pauseTimer();
+  document.getElementById("dayModalOverlay").classList.add("hidden");
+  openDateKey = null;
+  renderCalendar();
+}
+
+function bindGlobalEvents(){
+  document.getElementById("dayModalClose").onclick = closeDayModal;
+  document.getElementById("dayModalOverlay").addEventListener("click", (e) => {
+    if(e.target.id === "dayModalOverlay") closeDayModal();
+  });
+
+  document.getElementById("btnSettings").onclick = async () => {
+    document.getElementById("apiKeyInput").value = apiKey || "";
+    document.getElementById("settingsOverlay").classList.remove("hidden");
+  };
+  document.getElementById("settingsClose").onclick = () => document.getElementById("settingsOverlay").classList.add("hidden");
+  document.getElementById("settingsOverlay").addEventListener("click", (e) => {
+    if(e.target.id === "settingsOverlay") document.getElementById("settingsOverlay").classList.add("hidden");
+  });
+  document.getElementById("btnSaveKey").onclick = async () => {
+    const v = document.getElementById("apiKeyInput").value.trim();
+    apiKey = v || null;
+    await Store.set(K_APIKEY, apiKey);
+    showToast(apiKey ? "Chave salva." : "Nenhuma chave informada.");
+  };
+  document.getElementById("btnClearKey").onclick = async () => {
+    apiKey = null;
+    document.getElementById("apiKeyInput").value = "";
+    await Store.set(K_APIKEY, null);
+    showToast("Chave removida.");
+  };
+  document.getElementById("btnResetProgress").onclick = () => {
+    openConfirm("Tem certeza? Todo o progresso (dias concluídos, tempo estudado, respostas e correções) será apagado permanentemente.", async () => {
+      progress = {};
+      await saveProgress();
+      renderProgress();
+      renderCalendar();
+      document.getElementById("settingsOverlay").classList.add("hidden");
+      showToast("Progresso reiniciado.");
+    });
+  };
+
+  document.getElementById("confirmCancel").onclick = () => {
+    document.getElementById("confirmOverlay").classList.add("hidden");
+    confirmCallback = null;
+  };
+  document.getElementById("confirmOk").onclick = () => {
+    document.getElementById("confirmOverlay").classList.add("hidden");
+    if(confirmCallback) confirmCallback();
+    confirmCallback = null;
+  };
+  document.getElementById("confirmOverlay").addEventListener("click", (e) => {
+    if(e.target.id === "confirmOverlay"){ e.currentTarget.classList.add("hidden"); confirmCallback=null; }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if(e.key === "Escape"){
+      if(!document.getElementById("dayModalOverlay").classList.contains("hidden")) closeDayModal();
+      if(!document.getElementById("settingsOverlay").classList.contains("hidden")) document.getElementById("settingsOverlay").classList.add("hidden");
+      if(!document.getElementById("confirmOverlay").classList.contains("hidden")) document.getElementById("confirmOverlay").classList.add("hidden");
+    }
+  });
+
+  document.addEventListener("visibilitychange", () => {
+    if(document.hidden && timerState.running) pauseTimer();
+  });
+  window.addEventListener("beforeunload", () => {
+    if(timerState.running) pauseTimer();
+  });
+}
+
+init();
+</script>
+</body>
+</html>
